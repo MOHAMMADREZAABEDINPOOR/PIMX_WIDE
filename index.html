@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIMX_WIDE | امنیت بدون مرز - پلتفرم رمزنگاری داده‌ها</title>
+    
+    <!-- Advanced SEO Core Meta Tags -->
+    <meta name="description" content="PIMX_WIDE (pimx) پلتفرم ارتباطی فوق امن و رمزنگاری شده پیشرفته برای انتقال داده‌های حساس، پیام‌ها و فایل‌های سازمانی و شخصی به صورت کاملاً ناشناس و رمزنگاری شده." />
+    <meta name="keywords" content="pimx, pimxwide, pimx wide, پیمکس, پیمکسبزرگ, پیمکس واید, رمزگذاری, رمزگذاری متن, انتقال امن داده ها, امنیت اطلاعات, رمزنگاری فایل, ساخت رمز قوی" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <link rel="canonical" href="https://pimxwide.pages.dev/" />
+
+    <!-- Open Graph Metadata (Facebook, LinkedIn, Discord etc.) -->
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PIMX_WIDE (pimx) | امنیت بدون مرز و پلتفرم ارتباطی رمزنگاری شده" />
+    <meta property="og:description" content="انتقال فوق امن و رمزنگاری شده داده‌های سازمانی و شخصی با الگوریتم‌های درجه نظامی غیرقابل نفوذ." />
+    <meta property="og:url" content="https://pimxwide.pages.dev/" />
+    <meta property="og:site_name" content="PIMX_WIDE" />
+    <meta property="og:image" content="https://pimxwide.pages.dev/logo.png" />
+
+    <!-- Twitter Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PIMX_WIDE (pimx) | امنیت بدون مرز و ابزار رمزنگاری" />
+    <meta name="twitter:description" content="پلتفرم رمزنگاری سریع و امن داده‌ها با سطح حفاظت نظامی." />
+    <meta name="twitter:image" content="https://pimxwide.pages.dev/logo.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Vazirmatn', 'sans-serif'],
+            },
+            colors: {
+              pimx: {
+                bg: 'var(--color-bg)',
+                surface: 'var(--color-surface)',
+                card: 'var(--color-card)',
+                border: 'var(--color-border)',
+                text: 'var(--color-text)',
+                muted: 'var(--color-muted)',
+                accent: '#3182CE',
+                gold: '#C5A059', // Fallback
+              }
+            },
+            backgroundImage: {
+              'hero-pattern': "url('https://www.transparenttextures.com/patterns/cubes.png')",
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'float-slow': 'float 8s ease-in-out infinite',
+              'float-fast': 'float 4s ease-in-out infinite',
+              'spin-slow': 'spin 12s linear infinite',
+              'spin-reverse-slow': 'spin-reverse 15s linear infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              'spin-reverse': {
+                'from': { transform: 'rotate(360deg)' },
+                'to': { transform: 'rotate(0deg)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        /* Default to Dark Mode Colors to avoid flash */
+        --color-bg: #0B0F19;
+        --color-surface: #151C2C;
+        --color-card: #1C2538;
+        --color-border: #2D3748;
+        --color-text: #E2E8F0;
+        --color-muted: #94A3B8;
+      }
+
+      /* Invert logic: Light Mode override */
+      html:not(.dark) {
+        --color-bg: #F8FAFC;       /* Slate 50 */
+        --color-surface: #E2E8F0;  /* Slate 200 */
+        --color-card: #FFFFFF;     /* White */
+        --color-border: #CBD5E1;   /* Slate 300 */
+        --color-text: #0F172A;     /* Slate 900 */
+        --color-muted: #64748B;    /* Slate 500 */
+      }
+
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-feature-settings: "ss01";
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      /* Professional Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-muted);
+      }
+
+      /* LIVE GOLD GRADIENT ANIMATION */
+      .text-gold-live {
+        background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+        background-size: 200% auto;
+        color: #000;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 4s linear infinite;
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      /* Subtle Grid Background for sections */
+      .bg-grid-pattern {
+        background-image: linear-gradient(var(--color-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.05;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react": "https://esm.sh/react@18.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.263.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
