@@ -5,5 +5,5 @@ compatibility_date = "2024-12-01"
 # Cloudflare Dashboard → Pages → Your Project → Settings → Functions → D1 bindings
 [[d1_databases]]
 binding = "PIMX_VISITS"
-database_name = "pimxwide-visits"
-database_id = "88747c7d-f5f3-443a-8500-34c246d67d36"  # Replace after creating D1 in Cloudflare Dashboard
+database_name = "pimx-visits"
+database_id = "d588d3ed-0211-4de2-ae9d-849064ea403e"  # Replace after creating D1 in Cloudflare Dashboard
