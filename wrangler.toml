@@ -1,9 +1,9 @@
 name = "pimx-wide"
 compatibility_date = "2024-12-01"
 
-# D1 Database binding — must match the binding name configured in
-# Cloudflare Dashboard → Pages → Your Project → Settings → Functions → D1 bindings
-[[d1_databases]]
+# KV Namespace binding — must match the binding name configured in
+# Cloudflare Dashboard → Pages → Your Project → Settings → Functions → KV namespace bindings
+# Variable name: PIMX_VISITS
+[[kv_namespaces]]
 binding = "PIMX_VISITS"
-database_name = "pimx-visits"
-database_id = "d588d3ed-0211-4de2-ae9d-849064ea403e"  # Replace after creating D1 in Cloudflare Dashboard
+id = "6748c2f590ef4e70aa014528fcd506a6"  # Replace after creating KV in Cloudflare Dashboard

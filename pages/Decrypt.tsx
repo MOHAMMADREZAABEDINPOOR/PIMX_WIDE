@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { decryptData } from '../services/cipherService';
-import { logTelemetryAction } from '../services/telemetryService';
 import { Unlock, FileCheck, AlertTriangle, Key, Shield, Lock, FileSearch, ShieldCheck, Database, FileCode } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -109,7 +108,6 @@ export default function Decrypt() {
         password.trim()
       );
       setDecryptedText(result);
-      logTelemetryAction('test');
     } catch (e) {
       setError(t('err_integrity'));
     } finally {

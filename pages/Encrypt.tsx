@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { generateStrongPassword, encryptData } from '../services/cipherService';
-import { logTelemetryAction } from '../services/telemetryService';
 import { Copy, Check, RefreshCw, AlertCircle, Clock, Download, Files, Activity, Terminal, Eye, Lock, Key, ShieldCheck, Binary, Layers, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -89,7 +88,6 @@ export default function Encrypt() {
       const finalCipher = btoa(JSON.stringify(portable));
 
       setResult({ password, cipher: finalCipher });
-      logTelemetryAction('test');
     } catch (e) {
       alert("Encryption Error");
     } finally {
