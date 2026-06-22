@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { getTelemetryLogs, TelemetryLog, logTelemetryAction } from '../services/telemetryService';
-import { Shield, Users, Server, Activity, Laptop, MapPin, Eye, EyeOff, Lock, ArrowLeft, RefreshCw, Calendar } from 'lucide-react';
+import { Shield, Users, Server, Activity, Laptop, MapPin, Eye, EyeOff, Lock, ArrowLeft, RefreshCw, Calendar, Loader2 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // Define the 34 time ranges with their names and durations in milliseconds
@@ -55,20 +55,35 @@ export const AdminPage: React.FC<{ onNavigate: (route: any) => void }> = ({ onNa
   const [loginError, setLoginError] = useState<string>('');
   const [selectedRangeIndex, setSelectedRangeIndex] = useState<number>(6); // Default: "1 hour" (index 6)
   const [logs, setLogs] = useState<TelemetryLog[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [shake, setShake] = useState<boolean>(false);
 
-  // Initialize and check current authentication credentials state in sessionStorage
+  // Fetch logs from D1 via API for the currently selected time range
+  const fetchLogs = useCallback(async () => {
+    setIsLoading(true);
+    const range = TIME_RANGE_OPTIONS[selectedRangeIndex];
+    const now = Date.now();
+    const from = now - range.durationMs;
+    const fetched = await getTelemetryLogs(from, now);
+    setLogs(fetched);
+    setIsLoading(false);
+  }, [selectedRangeIndex]);
+
+  // Register admin visit & load initial data
   useEffect(() => {
-    // Register local visit telemetry
-    logTelemetryAction('visit');
-    
+    logTelemetryAction('visit'); // fire-and-forget
     const authed = sessionStorage.getItem('pimx_admin_authed');
     if (authed === 'true') {
       setIsAuthenticated(true);
     }
-    // Fetch telemetry data
-    setLogs(getTelemetryLogs());
   }, []);
+
+  // Fetch data when authenticated or range changes
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchLogs();
+    }
+  }, [isAuthenticated, fetchLogs]);
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -139,10 +154,12 @@ export const AdminPage: React.FC<{ onNavigate: (route: any) => void }> = ({ onNa
   });
   const totalDevicesLogged = Object.values(deviceCounts).reduce((a, b) => a + b, 0) || 1;
 
-  // Calculate Location shares
+  // Calculate Location shares — show "Country (City)" when city is available
   const locationCounts: Record<string, number> = {};
   filteredLogs.forEach(log => {
-    const loc = log.location || 'Unknown';
+    const loc = log.city && log.city !== 'Unknown' && log.city !== ''
+      ? `${log.country} (${log.city})`
+      : log.country || 'Unknown';
     locationCounts[loc] = (locationCounts[loc] || 0) + 1;
   });
   const totalLocationsLogged = Object.values(locationCounts).reduce((a, b) => a + b, 0) || 1;
@@ -319,6 +336,16 @@ export const AdminPage: React.FC<{ onNavigate: (route: any) => void }> = ({ onNa
   return (
     <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-20 pt-8 font-sans" dir="ltr">
       
+      {/* Loading overlay */}
+      {isLoading && (
+        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 flex items-center justify-center pointer-events-none">
+          <div className="flex items-center gap-3 bg-pimx-card border border-pimx-border rounded-xl px-6 py-4 shadow-2xl">
+            <Loader2 className="w-5 h-5 animate-spin text-yellow-500" />
+            <span className="text-xs font-mono text-pimx-muted">Syncing from D1...</span>
+          </div>
+        </div>
+      )}
+      
       {/* Admin Title Bar */}
       <div className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center border-b border-pimx-border pb-6 gap-6">
         <div>
@@ -351,8 +378,7 @@ export const AdminPage: React.FC<{ onNavigate: (route: any) => void }> = ({ onNa
 
           <button
             onClick={() => {
-              setLogs(getTelemetryLogs());
-              // Simulated instant alert
+              fetchLogs();
               const alertElem = document.getElementById('refresh-notice');
               if (alertElem) {
                 alertElem.classList.remove('opacity-0');
@@ -362,7 +388,7 @@ export const AdminPage: React.FC<{ onNavigate: (route: any) => void }> = ({ onNa
             className="flex items-center justify-center gap-2 bg-pimx-surface hover:bg-pimx-surface/80 text-pimx-text border border-pimx-border rounded-xl px-4 py-2.5 text-xs font-bold tracking-wide transition cursor-pointer"
             title="Reload telemetry logs"
           >
-            <RefreshCw className="w-3.5 h-3.5" />
+            {isLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <RefreshCw className="w-3.5 h-3.5" />}
             Sync Data
           </button>
         </div>
@@ -583,7 +609,7 @@ export const AdminPage: React.FC<{ onNavigate: (route: any) => void }> = ({ onNa
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {Object.entries(locationCounts).length === 0 ? (
             <div className="col-span-2 text-center text-xs text-pimx-muted py-6 font-mono">
-              No location telemetry recorded for the selected range.
+              No visits recorded for the selected range. Data will appear as real users visit the site.
             </div>
           ) : (
             Object.entries(locationCounts)

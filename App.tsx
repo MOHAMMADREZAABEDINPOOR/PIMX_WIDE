@@ -12,6 +12,7 @@ import { AdminPage } from './pages/Admin';
 import { AppRoute } from './types';
 import { Hexagon, Fingerprint } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { logTelemetryAction } from './services/telemetryService';
 
 // --- Boot Screen Component ---
 const BootScreen = ({ onComplete }: { onComplete: () => void }) => {
@@ -119,6 +120,11 @@ function AppContent() {
   
   // Force Dark Mode by default for better visual impact
   const [isDark, setIsDark] = useState(true);
+
+  // Record a real visit on every page load (fire-and-forget)
+  useEffect(() => {
+    logTelemetryAction('visit');
+  }, []);
 
   // Synchronize route with URL pathname (popstate)
   useEffect(() => {
