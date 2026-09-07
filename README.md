@@ -22,7 +22,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Web Crypto API](https://img.shields.io/badge/Crypto-Web_Crypto_API-0052CC?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
 [![Languages: 23+](https://img.shields.io/badge/Languages-23+_Locales-28a745?style=for-the-badge)](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE)
-[![Read in Persian](https://img.shields.io/badge/مطالعه_به_فارسی-Persian_README-008080?style=for-the-badge)](#-بخش-فوقالعاده-مفصل-و-جامع-به-زبان-فارسی-persian-documentation)
+[![Read in Persian](https://img.shields.io/badge/مطالعه_به_فارسی-Persian_README-008080?style=for-the-badge)](#persian-documentation)
 
 <p align="center">
   <b>PIMX_WIDE</b> is an enterprise zero-knowledge cryptographic web suite supporting 23+ global languages. By executing hardware-accelerated AES-256-GCM authenticated encryption and PBKDF2 key derivation directly in the user's browser memory via the native Web Crypto API, PIMX_WIDE ensures that plaintexts and encryption keys never touch a remote server or persistent storage.
@@ -35,7 +35,7 @@
 [Directory Anatomy](#-exhaustive-directory--file-anatomy) •
 [Security Architecture](#-security--zero-knowledge-architecture) •
 [Quick Start](#-quick-start--local-development) •
-[توضیحات فارسی](#-بخش-فوقالعاده-مفصل-و-جامع-به-زبان-فارسی-persian-documentation) •
+[توضیحات فارسی](#persian-documentation) •
 [Roadmap](#-strategic-engineering-roadmap) •
 [License](#-copyleft-license--legal-attribution)
 
@@ -134,7 +134,8 @@ Open `http://localhost:5173` to test encryption locally.
 
 ---
 
-## 🇮🇷 بخش فوق‌العاده مفصل و جامع به زبان فارسی (Persian Documentation)
+## Persian Documentation
+### 🇮🇷 مستندات فوق‌العاده مفصل، جامع و فنی به زبان فارسی
 
 ### ۱. مقدمه و چرایی ساخت سامانه رمزنگاری PIMX_WIDE
 پروژه **PIMX_WIDE** یک کارگاه امنیتی و پلتفرم رمزنگاری پیشرفته کلاینت‌ساید بر پایه استاندارد نظامی **AES-256-GCM** است. در عصری که ارتباطات اینترنتی به شدت تحت نظارت، فیلترینگ و استراق سمع قرار دارند، ارسال اطلاعات حساس (مانند رمزهای عبور، کلیدهای خصوصی ارز دیجیتال، و اسناد محرمانه) از طریق پیام‌رسان‌ها خطرات بسیار بزرگی به همراه دارد.
@@ -161,7 +162,7 @@ Distributed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
 <!-- ============================================================================== -->
 <!-- ANIMATED CAPSULE FOOTER                                                        -->
 <!-- ============================================================================== -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1,12,24,30&height=120&section=footer" alt="Footer" width="100%" />
+<img src="./assets/footer.svg" alt="PIMX_WIDE 3D Footer" width="100%" />
 
 <sub>Architected with dedication by <a href="https://github.com/MOHAMMADREZAABEDINPOOR"><b>MOHAMMADREZA ABEDINPOOR</b></a>. If PIMX_WIDE safeguards your digital privacy, consider leaving a ⭐!</sub>
 
