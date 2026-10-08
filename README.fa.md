@@ -10,6 +10,12 @@
 
 # 🔐 PIMX WIDE
 
+<!-- pimx-live-site:start -->
+## وب‌سایت آنلاین
+
+**[مشاهدهٔ PIMX_WIDE ↗](https://pimxwide.pages.dev/)**
+<!-- pimx-live-site:end -->
+
 رابط چندزبانه رمزنگاری متن و فایل با Web Crypto مرورگر، AES-256-GCM و کلید مشتق‌شده از گذرواژه، همراه سوابق محلی و ثبت اختیاری بازدید.
 
 [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [PIMX / Profile](https://github.com/MOHAMMADREZAABEDINPOOR) · [بنر ثابت](assets/readme/hero.png)
