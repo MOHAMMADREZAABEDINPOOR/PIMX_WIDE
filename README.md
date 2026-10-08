@@ -8,6 +8,12 @@
 
 # 🔐 PIMX WIDE
 
+<!-- pimx-live-site:start -->
+## Live website
+
+**[Open PIMX_WIDE ↗](https://pimxwide.pages.dev/)**
+<!-- pimx-live-site:end -->
+
 A multilingual text/file encryption interface using browser Web Crypto, AES-256-GCM and password-derived keys, with local records and optional visitor telemetry.
 
 [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [PIMX / Profile](https://github.com/MOHAMMADREZAABEDINPOOR) · [Static artwork](assets/readme/hero.png)
