@@ -1,6 +1,6 @@
 # PIMX WIDE
 
-[???????](https://pimxwide.pages.dev/)
+[وب‌سایت](https://pimxwide.pages.dev/)
 
 [فارسی](README.fa.md) · [English](README.md) · [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [پروفایل PIMX](https://github.com/MOHAMMADREZAABEDINPOOR)
 
