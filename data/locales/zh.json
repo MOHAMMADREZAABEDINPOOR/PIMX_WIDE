@@ -74,7 +74,6 @@
   "ONE TOUCH / YOUR PRIVACY": "一键式/您的隐私",
   "TAKE BACK YOUR SPACE": "夺回您的空间",
   "to end your session": "结束您的会话",
-  "Quick lock clears session inputs and outputs and closes the vault. Your saved vault stays encrypted.": "快速锁定清除会话输入和输出并关闭保管库。您保存的保管库保持加密状态。",
   "Try quick lock": "尝试快速锁定",
   "LOCAL / AES": "本地/AES",
   "Encrypted": "加密的",
@@ -549,5 +548,6 @@
   "SEALED COPY": "密封副本",
   "LOCAL / BY DESIGN": "本地/设计",
   "PIMX / THE AGREEMENT": "PIMX/协议",
-  "YOUR CHOICES. CLEARLY EXPLAINED.": "您的选择。解释清楚。"
+  "YOUR CHOICES. CLEARLY EXPLAINED.": "您的选择。解释清楚。",
+  "Quick lock clears session inputs and outputs, closes the vault and opens Google. Your saved vault stays encrypted; browser history is not erased.": "快速锁定会清除会话输入和输出、关闭保险库并打开 Google。已保存的保险库仍保持加密；浏览器历史记录不会被清除。"
 }

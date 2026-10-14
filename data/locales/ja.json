@@ -74,7 +74,6 @@
   "ONE TOUCH / YOUR PRIVACY": "ワンタッチ / プライバシー",
   "TAKE BACK YOUR SPACE": "自分のスペースを取り戻しましょう",
   "to end your session": "セッションを終了するには",
-  "Quick lock clears session inputs and outputs and closes the vault. Your saved vault stays encrypted.": "クイック ロックはセッションの入力と出力をクリアし、ボールトを閉じます。保存されたボールトは暗号化されたままになります。",
   "Try quick lock": "クイックロックを試してみる",
   "LOCAL / AES": "ローカル/AES",
   "Encrypted": "暗号化された",
@@ -549,5 +548,6 @@
   "SEALED COPY": "封印されたコピー",
   "LOCAL / BY DESIGN": "ローカル / デザインによる",
   "PIMX / THE AGREEMENT": "PIMX / 契約",
-  "YOUR CHOICES. CLEARLY EXPLAINED.": "あなたの選択。明確に説明されています。"
+  "YOUR CHOICES. CLEARLY EXPLAINED.": "あなたの選択。明確に説明されています。",
+  "Quick lock clears session inputs and outputs, closes the vault and opens Google. Your saved vault stays encrypted; browser history is not erased.": "クイックロックはセッションの入力と出力を消去し、保管庫を閉じて Google を開きます。保存済みの保管庫は暗号化されたままです。ブラウザーの履歴は消去されません。"
 }

@@ -17,20 +17,12 @@
 }
 .header-language .select-trigger {
   width: auto;
-  min-width: 100px;
+  min-width: 78px;
   min-height: 34px;
   padding: 6px 10px;
   gap: 8px;
   font-size: 13px;
   font-weight: 500;
-}
-.language-flag {
-  display: block;
-  width: 20px;
-  height: 15px;
-  flex-shrink: 0;
-  object-fit: cover;
-  border-radius: 2px;
 }
 .header-language .select-trigger > span:not(.select-value-icon) {
   max-width: 76px;
@@ -53,21 +45,15 @@
     max-width: 110px;
   }
   .header-language .select-trigger {
-    width: 55px;
-    min-width: 55px;
+    width: auto;
+    min-width: 60px;
+    max-width: 84px;
     padding: 4px 6px;
+    gap: 4px;
+    font-size: 11px;
     justify-content: center;
   }
   .header-language .select-trigger > span:not(.select-value-icon) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
-  }
-  .header-language .select-value-icon {
-    width: 20px;
-    flex-shrink: 0;
+    max-width: 52px;
   }
 }

@@ -59,6 +59,7 @@ import { Toast } from "./Toast";
 import { SiteFooter } from "./SiteFooter";
 import { AppLoader } from "./AppLoader";
 import { LanguageSelect } from "./LanguageSelect";
+import { flushSync } from "react-dom";
 export type Route =
   | "home"
   | "studio"
@@ -127,6 +128,10 @@ export function Experience() {
     setEpoch((x) => x + 1);
     setHidden(true);
   }, []);
+  const quickExit = useCallback(() => {
+    flushSync(lock);
+    window.location.replace("https://www.google.com/");
+  }, [lock]);
   useEffect(() => {
     const pop = () => {
         setRoute(readRoute());
@@ -151,7 +156,7 @@ export function Experience() {
           e.key.toLowerCase() === "l"
         ) {
           e.preventDefault();
-          lock();
+          quickExit();
         }
       };
     window.addEventListener("popstate", pop);
@@ -177,7 +182,7 @@ export function Experience() {
       window.removeEventListener("beforeinstallprompt", before);
       window.removeEventListener("keydown", key);
     };
-  }, [lock]);
+  }, [quickExit]);
   useEffect(() => {
     const activity = () => {
       last.current = Date.now();
@@ -291,7 +296,7 @@ export function Experience() {
             <button
               className="privacy-button"
               aria-label={l("قفل سریع", "Quick lock")}
-              onClick={lock}
+              onClick={quickExit}
             >
               <EyeOff size={16} />
               <span>{l("قفل سریع", "Quick lock")}</span>
@@ -350,7 +355,7 @@ export function Experience() {
             transition={{ duration: animated ? 0.4 : 0, ease }}
           >
             <Suspense fallback={<AppLoader />}>
-              {route === "home" && <Landing nav={nav} lock={lock} />}
+              {route === "home" && <Landing nav={nav} lock={quickExit} />}
               {route === "studio" && (
                 <Studio
                   initialPayload={pending}
@@ -417,7 +422,7 @@ export function Experience() {
             <button
               onClick={() => {
                 setCommands(false);
-                lock();
+                quickExit();
               }}
             >
               <EyeOff size={20} />
@@ -451,7 +456,14 @@ export function Experience() {
             {l("شروع جلسه جدید", "Start a new session")}
             <ChevronLeft size={18} />
           </button>
-          <a className="text-link" href="about:blank">
+          <a
+            className="text-link"
+            href="https://www.google.com/"
+            onClick={(event) => {
+              event.preventDefault();
+              quickExit();
+            }}
+          >
             {l("خروج سریع", "Quick exit")}
           </a>
         </div>

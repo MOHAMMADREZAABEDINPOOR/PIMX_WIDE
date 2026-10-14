@@ -74,7 +74,6 @@
   "ONE TOUCH / YOUR PRIVACY": "ОДНО КАСАНИЕ / ВАША КОНФИДЕНЦИАЛЬНОСТЬ",
   "TAKE BACK YOUR SPACE": "ВЕРНИТЕ СВОЁ ПРОСТРАНСТВО",
   "to end your session": "чтобы завершить сеанс",
-  "Quick lock clears session inputs and outputs and closes the vault. Your saved vault stays encrypted.": "Быстрая блокировка очищает входные и выходные данные сеанса и закрывает хранилище. Ваше сохраненное хранилище остается зашифрованным.",
   "Try quick lock": "Попробуйте быструю блокировку",
   "LOCAL / AES": "ЛОКАЛЬНЫЙ / AES",
   "Encrypted": "Зашифрованный",
@@ -549,5 +548,6 @@
   "SEALED COPY": "ЗАПЕЧАТАННАЯ КОПИЯ",
   "LOCAL / BY DESIGN": "ЛОКАЛЬНО / ПО ДИЗАЙНУ",
   "PIMX / THE AGREEMENT": "ПИМК / СОГЛАШЕНИЕ",
-  "YOUR CHOICES. CLEARLY EXPLAINED.": "ВАШ ВЫБОР. ПОНЯТНО ОБЪЯСНИЛО."
+  "YOUR CHOICES. CLEARLY EXPLAINED.": "ВАШ ВЫБОР. ПОНЯТНО ОБЪЯСНИЛО.",
+  "Quick lock clears session inputs and outputs, closes the vault and opens Google. Your saved vault stays encrypted; browser history is not erased.": "Быстрая блокировка очищает входные и выходные данные сеанса, закрывает хранилище и открывает Google. Сохранённое хранилище остаётся зашифрованным; история браузера не удаляется."
 }

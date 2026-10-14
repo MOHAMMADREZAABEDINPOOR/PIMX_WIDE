@@ -7,7 +7,3 @@
 - License: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/), under [EFF's copyright policy](https://www.eff.org/copyright).
 
 The app extracts the word column and selects words with browser cryptographic randomness instead of physical dice. The source wordlist is unchanged. EFF does not endorse this app. This license covers the wordlist; it does not grant a license to the rest of the project.
-
-## Language flags
-
-The eight SVG flags in `public/flags` come from [flag-icons](https://github.com/lipis/flag-icons), copyright Panayiotis Lipiridis, under the MIT license. The full license is included in `public/flags/LICENSE.txt`. These local images keep flags visible on platforms that display regional emoji as country letters.

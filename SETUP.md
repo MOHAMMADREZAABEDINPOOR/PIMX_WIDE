@@ -65,6 +65,8 @@ Language options are available in the header and settings. Persian uses RTL; the
 
 `/build-info.json` exposes the deployed Git revision. HTML, bootstrap scripts and the service worker revalidate online; offline mode uses the app shell. A replacement service worker activates after precaching succeeds and removes obsolete PIMX caches, without reloading a user's active session.
 
+Manual quick lock (including Ctrl+Shift+L) clears current session state, closes the vault and replaces the current page with `https://www.google.com/`. Automatic inactivity locking keeps the local lock screen. This does not erase browser history, downloaded files, saved encrypted vaults or clipboard contents.
+
 ```powershell
 npm run typecheck
 npm test

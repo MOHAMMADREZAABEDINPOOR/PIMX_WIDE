@@ -81,18 +81,12 @@ test("language picker offers eight languages, works with the keyboard and persis
   await page.goto("/");
   const picker = page.locator(".header-language [role=combobox]");
   await expect(picker).toContainText("فارسی");
-  await expect(picker.locator("img")).toHaveAttribute("src", "/flags/ir.svg");
-  await expect(picker.locator("img")).toHaveJSProperty("complete", true);
-  expect(
-    await picker
-      .locator("img")
-      .evaluate((image: HTMLImageElement) => image.naturalWidth),
-  ).toBeGreaterThan(0);
+  await expect(picker.locator("img")).toHaveCount(0);
   expect((await picker.boundingBox())!.width).toBeLessThan(150);
   await picker.focus();
   await page.keyboard.press("Enter");
   await expect(page.getByRole("option")).toHaveCount(8);
-  await expect(page.getByRole("option").locator("img")).toHaveCount(8);
+  await expect(page.getByRole("option").locator("img")).toHaveCount(0);
   await page.keyboard.press("End");
   await page.keyboard.press("Enter");
   await expect(page.locator("html")).toHaveAttribute("lang", "ko");

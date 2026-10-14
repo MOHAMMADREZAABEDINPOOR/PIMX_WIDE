@@ -74,7 +74,6 @@
   "ONE TOUCH / YOUR PRIVACY": "ONE TOUCH / IHRE PRIVATSPHÄRE",
   "TAKE BACK YOUR SPACE": "NEHMEN SIE IHREN RAUM ZURÜCK",
   "to end your session": "um Ihre Sitzung zu beenden",
-  "Quick lock clears session inputs and outputs and closes the vault. Your saved vault stays encrypted.": "Die Schnellsperre löscht Sitzungseingaben und -ausgaben und schließt den Tresor. Ihr gespeicherter Tresor bleibt verschlüsselt.",
   "Try quick lock": "Versuchen Sie es mit der Schnellverriegelung",
   "LOCAL / AES": "LOKAL / AES",
   "Encrypted": "Verschlüsselt",
@@ -549,5 +548,6 @@
   "SEALED COPY": "VERSIEGELTE KOPIE",
   "LOCAL / BY DESIGN": "LOKAL / DURCH DESIGN",
   "PIMX / THE AGREEMENT": "PIMX / DIE VEREINBARUNG",
-  "YOUR CHOICES. CLEARLY EXPLAINED.": "IHRE WAHLEN. KLAR ERKLÄRT."
+  "YOUR CHOICES. CLEARLY EXPLAINED.": "IHRE WAHLEN. KLAR ERKLÄRT.",
+  "Quick lock clears session inputs and outputs, closes the vault and opens Google. Your saved vault stays encrypted; browser history is not erased.": "Die Schnellsperre löscht die Ein- und Ausgaben der Sitzung, schließt den Tresor und öffnet Google. Ihr gespeicherter Tresor bleibt verschlüsselt; der Browserverlauf wird nicht gelöscht."
 }

@@ -309,8 +309,8 @@ export function LivingSections({
           </h2>
           <p>
             {l(
-              "قفل سریع ورودی‌ها و خروجی‌های جلسه را پاک می‌کند و گاوصندوق را می‌بندد. نسخه ذخیره‌شده گاوصندوق رمز‌شده باقی می‌ماند.",
-              "Quick lock clears session inputs and outputs and closes the vault. Your saved vault stays encrypted.",
+              "قفل سریع ورودی‌ها و خروجی‌های جلسه را پاک می‌کند، گاوصندوق را می‌بندد و گوگل را باز می‌کند. گاوصندوق ذخیره‌شده رمز‌شده می‌ماند؛ تاریخچه مرورگر پاک نمی‌شود.",
+              "Quick lock clears session inputs and outputs, closes the vault and opens Google. Your saved vault stays encrypted; browser history is not erased.",
             )}
           </p>
           <button className="btn secondary" onClick={lock}>

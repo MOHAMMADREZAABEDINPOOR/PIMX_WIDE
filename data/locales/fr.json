@@ -74,7 +74,6 @@
   "ONE TOUCH / YOUR PRIVACY": "UNE TOUCHE / VOTRE CONFIDENTIALITÉ",
   "TAKE BACK YOUR SPACE": "REPRENEZ VOTRE ESPACE",
   "to end your session": "pour terminer votre séance",
-  "Quick lock clears session inputs and outputs and closes the vault. Your saved vault stays encrypted.": "Le verrouillage rapide efface les entrées et sorties de session et ferme le coffre-fort. Votre coffre-fort enregistré reste crypté.",
   "Try quick lock": "Essayez le verrouillage rapide",
   "LOCAL / AES": "LOCAL / AES",
   "Encrypted": "Crypté",
@@ -549,5 +548,6 @@
   "SEALED COPY": "COPIE SCELLÉE",
   "LOCAL / BY DESIGN": "LOCAL / PAR CONCEPTION",
   "PIMX / THE AGREEMENT": "PIMX / L'ACCORD",
-  "YOUR CHOICES. CLEARLY EXPLAINED.": "VOS CHOIX. CLAIREMENT EXPLIQUÉ."
+  "YOUR CHOICES. CLEARLY EXPLAINED.": "VOS CHOIX. CLAIREMENT EXPLIQUÉ.",
+  "Quick lock clears session inputs and outputs, closes the vault and opens Google. Your saved vault stays encrypted; browser history is not erased.": "Le verrouillage rapide efface les entrées et les résultats de la session, ferme le coffre-fort et ouvre Google. Votre coffre-fort enregistré reste chiffré ; l’historique du navigateur n’est pas effacé."
 }

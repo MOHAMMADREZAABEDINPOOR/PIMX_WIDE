@@ -32,8 +32,14 @@ test("home sample encrypts and decrypts, tools navigate, FAQ and quick lock work
   await page.locator(".shelf-tool").nth(2).click();
   await expect(page).toHaveURL(/\/passwords$/);
   await expect(page.locator(".generated-value output")).not.toBeEmpty();
+  await page.route("https://www.google.com/**", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: "<title>Google fixture</title>",
+    }),
+  );
   await page.getByRole("button", { name: "قفل سریع", exact: true }).click();
-  await expect(page.locator(".privacy-overlay")).toBeVisible();
+  await expect(page).toHaveURL("https://www.google.com/");
 });
 
 test("redesigned pages fit mobile and desktop in both languages and themes", async ({

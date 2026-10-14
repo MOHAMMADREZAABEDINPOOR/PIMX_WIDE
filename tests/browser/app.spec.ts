@@ -77,11 +77,14 @@ test("text encrypt/decrypt, invalid password, cancellation and lock clear sessio
   await expect(page.locator(".recovered-text")).toHaveValue(
     "سلام خصوصی 🔐\nLine two",
   );
+  await page.route("https://www.google.com/**", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: "<title>Google fixture</title>",
+    }),
+  );
   await page.getByRole("button", { name: "Quick lock", exact: true }).click();
-  await expect(
-    page.getByRole("heading", { name: "Your space is locked." }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Start a new session" }).click();
+  await expect(page).toHaveURL("https://www.google.com/");
   await page.goto("/studio");
   await expect(
     page.getByLabel("Package password", { exact: true }),
