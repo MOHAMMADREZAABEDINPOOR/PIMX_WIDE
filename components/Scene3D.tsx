@@ -10,6 +10,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useMotionEnabled } from "./motion";
+import { usePreferences } from "../contexts/Preferences";
 export type SceneKind =
   "core" | "shield" | "layers" | "network" | "folio" | "settings";
 export function Scene3D({
@@ -21,6 +22,7 @@ export function Scene3D({
   compact?: boolean;
   active?: number;
 }) {
+  const { l } = usePreferences();
   const ref = useRef<HTMLDivElement>(null),
     frame = useRef(0);
   const enabled = useMotionEnabled();
@@ -82,11 +84,22 @@ export function Scene3D({
       <div className="scene-orbit outer-orbit" />
       <div className="scene-orbit inner-orbit" />
       <div className="scene-coordinate coordinate-top">
-        PIMX / {kind.toUpperCase()}
+        PIMX /{" "}
+        {
+          {
+            core: l("هسته", "Core"),
+            shield: l("محافظت", "Protection"),
+            layers: l("لایه‌ها", "Layers"),
+            network: l("شبکه", "Network"),
+            folio: l("توافق‌نامه", "Agreement"),
+            settings: l("تنظیمات", "Settings"),
+          }[kind]
+        }
         <span>+</span>
       </div>
       <div className="scene-coordinate coordinate-bottom">
-        PRIVATE SYSTEMS / 02<span>+</span>
+        {" "}
+        {l("سامانه‌های خصوصی / ۰۲", "PRIVATE SYSTEMS / 02")} <span>+</span>
       </div>
       <div className="scene-object">
         {kind === "core" && (
@@ -102,7 +115,7 @@ export function Scene3D({
                       <LockKeyhole size={44} />
                     ) : (
                       <span className="cube-face-code">
-                        {["", "PIMX", "256", "", "LOCAL", "02"][i]}
+                        {["", "PIMX", "256", "", l("محلی", "LOCAL"), "02"][i]}
                       </span>
                     )}
                   </div>
@@ -120,7 +133,10 @@ export function Scene3D({
             <div className="shield-plate">
               <div className="shield-engraving">
                 <ShieldCheck size={74} strokeWidth={1.2} />
-                <span>YOUR KEY. YOUR CONTROL.</span>
+                <span>
+                  {" "}
+                  {l("کلید شما. اختیار شما.", "YOUR KEY. YOUR CONTROL.")}{" "}
+                </span>
               </div>
             </div>
             <div className="shield-orbit">
@@ -137,7 +153,15 @@ export function Scene3D({
                 style={{ "--layer": i } as React.CSSProperties}
               >
                 <span className="plane-code">
-                  0{i + 1} / {["INPUT", "KEY", "CIPHER", "VAULT"][i]}
+                  0{i + 1} /{" "}
+                  {
+                    [
+                      l("ورودی", "INPUT"),
+                      l("کلید", "KEY"),
+                      l("رمزنگاری", "CIPHER"),
+                      l("گاوصندوق", "VAULT"),
+                    ][i]
+                  }
                 </span>
                 {i === 0 ? (
                   <FileText size={38} />
@@ -181,7 +205,10 @@ export function Scene3D({
             <div className="folio-page folio-back" />
             <div className="folio-page folio-mid" />
             <div className="folio-page folio-front">
-              <span className="folio-masthead">PIMX / AGREEMENT</span>
+              <span className="folio-masthead">
+                {" "}
+                {l("PIMX / توافق‌نامه", "PIMX / AGREEMENT")}{" "}
+              </span>
               <div className="folio-lines">
                 <i />
                 <i />
@@ -192,7 +219,10 @@ export function Scene3D({
               <div className="folio-seal">
                 <ShieldCheck size={34} />
               </div>
-              <span className="folio-signature">Your data. Your choice.</span>
+              <span className="folio-signature">
+                {" "}
+                {l("داده‌های شما. انتخاب شما.", "Your data. Your choice.")}{" "}
+              </span>
             </div>
             <div className="folio-quill">
               <KeyRound size={32} />
@@ -211,7 +241,10 @@ export function Scene3D({
                 <span />
                 <span />
               </div>
-              <span className="control-caption">YOUR SPACE / YOUR RULES</span>
+              <span className="control-caption">
+                {" "}
+                {l("فضای شما / قواعد شما", "YOUR SPACE / YOUR RULES")}{" "}
+              </span>
             </div>
             <div className="control-satellite">
               <Sparkles size={23} />
@@ -222,10 +255,10 @@ export function Scene3D({
       <div className="scene-floating-chip">
         <i className="live-dot" />{" "}
         {kind === "folio"
-          ? "CLEAR BY DESIGN"
+          ? l("طراحی‌شده برای شفافیت", "CLEAR BY DESIGN")
           : kind === "settings"
-            ? "PERSONAL BY DESIGN"
-            : "PRIVATE BY DESIGN"}
+            ? l("طراحی‌شده برای شما", "PERSONAL BY DESIGN")
+            : l("طراحی‌شده برای حریم خصوصی", "PRIVATE BY DESIGN")}
       </div>
     </div>
   );

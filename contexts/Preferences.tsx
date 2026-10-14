@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { isLanguage, translate, Language, Translator } from "../data/i18n";
 export interface Preferences {
-  lang: "fa" | "en";
+  lang: Language;
   theme: "dark" | "light";
   accent: "gold";
   motion: boolean;
@@ -19,7 +20,7 @@ const defaults = defaultPreferences;
 const Context = createContext<{
   prefs: Preferences;
   update: (p: Partial<Preferences>) => void;
-  l: (fa: string, en: string) => string;
+  l: Translator;
 }>(null!);
 export function PreferencesProvider({
   children,
@@ -30,7 +31,7 @@ export function PreferencesProvider({
     try {
       const p = JSON.parse(localStorage.getItem("pimx:preferences") || "{}");
       return {
-        lang: p.lang === "en" ? "en" : "fa",
+        lang: isLanguage(p.lang) ? p.lang : "fa",
         theme: p.theme === "light" ? "light" : "dark",
         accent: "gold",
         motion: typeof p.motion === "boolean" ? p.motion : true,
@@ -43,11 +44,25 @@ export function PreferencesProvider({
   });
   useEffect(() => {
     const root = document.documentElement;
-    root.lang = prefs.lang;
+    root.lang = prefs.lang === "zh" ? "zh-CN" : prefs.lang;
     root.dir = prefs.lang === "fa" ? "rtl" : "ltr";
     root.dataset.theme = prefs.theme;
     root.dataset.accent = prefs.accent;
     root.dataset.motion = String(prefs.motion);
+    document.title = `PIMX WIDE | ${translate(prefs.lang, "ابزارهای رمزنگاری محلی", "Local encryption tools")}`;
+    const description = document.querySelector<HTMLMetaElement>(
+      'meta[name="description"]',
+    );
+    if (description)
+      description.content = translate(
+        prefs.lang,
+        "رمزنگاری متن و فایل، گاوصندوق محلی و رمزساز.",
+        "Text and file encryption, a local vault and a password generator.",
+      );
+    const manifest = document.querySelector<HTMLLinkElement>(
+      'link[rel="manifest"]',
+    );
+    if (manifest) manifest.href = `/manifest-${prefs.lang}.webmanifest`;
     const themeColor = document.querySelector<HTMLMetaElement>(
       'meta[name="theme-color"]',
     );
@@ -62,7 +77,7 @@ export function PreferencesProvider({
       value={{
         prefs,
         update: (p) => set((prev) => ({ ...prev, ...p, accent: "gold" })),
-        l: (fa, en) => (prefs.lang === "fa" ? fa : en),
+        l: (fa, en, values) => translate(prefs.lang, fa, en, values),
       }}
     >
       {children}

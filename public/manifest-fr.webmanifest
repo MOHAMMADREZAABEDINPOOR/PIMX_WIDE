@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "PIMX WIDE | Outils de chiffrement locaux",
+  "short_name": "PIMX WIDE",
+  "description": "Cryptage de textes et de fichiers, un coffre-fort local et un générateur de mots de passe.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#101112",
+  "theme_color": "#101112",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "fr",
+  "dir": "ltr"
+}

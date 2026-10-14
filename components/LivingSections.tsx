@@ -32,7 +32,7 @@ export function LivingSections({
     {
       icon: FileText,
       title: l("ورودی شما", "Your input"),
-      tag: "01 / ORIGINAL",
+      tag: l("۰۱ / محتوای اصلی", "01 / ORIGINAL"),
       text: l(
         "متن و فایل‌ها روی دستگاه شما خوانده می‌شوند؛ نام فایل‌ها داخل بسته رمز‌شده قرار می‌گیرد.",
         "Text and files are read on your device. Filenames stay inside the encrypted package.",
@@ -41,7 +41,7 @@ export function LivingSections({
     {
       icon: KeyRound,
       title: l("رمز عبور شما", "Your password"),
-      tag: "02 / KEY DERIVATION",
+      tag: l("۰۲ / مشتق‌سازی کلید", "02 / KEY DERIVATION"),
       text: l(
         "کلید از رمز عبور و یک salt تصادفی مشتق می‌شود. رمز عبور در خروجی بسته قرار نمی‌گیرد.",
         "A key is derived from your password and a random salt. Your password is never included in the package.",
@@ -59,7 +59,7 @@ export function LivingSections({
     {
       icon: LockKeyhole,
       title: l("گاوصندوق شما", "Your vault"),
-      tag: "04 / DEVICE VAULT",
+      tag: l("۰۴ / گاوصندوق دستگاه", "04 / DEVICE VAULT"),
       text: l(
         "اگر بخواهید، بسته در گاوصندوق دستگاه ذخیره می‌شود. عنوان‌ها و برچسب‌ها هم با رمز اصلی گاوصندوق رمز می‌شوند.",
         "If you choose, save the package in your device vault. Its titles and tags are encrypted with the vault password too.",
@@ -70,7 +70,7 @@ export function LivingSections({
     {
       icon: Cpu,
       title: l("روی دستگاه", "On your device"),
-      tag: "Local processing",
+      tag: l("پردازش محلی", "Local processing"),
       text: l(
         "رمزکردن و بازیابی متن و فایل در مرورگر انجام می‌شود. برای شروع، نیازی به حساب کاربری نیست.",
         "Text and file encryption happens in the browser. You do not need an account to start.",
@@ -79,7 +79,7 @@ export function LivingSections({
     {
       icon: Link2,
       title: l("با انتخاب شما", "By your choice"),
-      tag: "Encrypted SHARING",
+      tag: l("اشتراک رمزشده", "Encrypted SHARING"),
       text: l(
         "فقط وقتی لینک می‌سازید، نسخه رمز‌شده ارسال می‌شود. رمز عبور را از مسیر دیگری به گیرنده برسانید.",
         "Only when you create a link is the encrypted copy uploaded. Send the password through a separate channel.",
@@ -88,7 +88,7 @@ export function LivingSections({
     {
       icon: WifiOff,
       title: l("حتی بدون شبکه", "Even offline"),
-      tag: "OFFLINE TOOLS",
+      tag: l("ابزارهای آفلاین", "OFFLINE TOOLS"),
       text: l(
         "بعد از بارگذاری کامل نسخه انتشار، ابزارهای محلی همراه شما می‌مانند. سرویس لینک به شبکه نیاز دارد.",
         "After the production app is fully cached, local tools stay with you. Link sharing still needs a connection.",
@@ -101,16 +101,25 @@ export function LivingSections({
         <div className="cinema-stage">
           <div className="cinema-stage-grid" />
           <div className="cinema-heading">
-            <span className="eyebrow">How encryption works</span>
-            <span className="micro-label">A VISUAL LOOK INSIDE</span>
+            <span className="eyebrow">
+              {" "}
+              {l("رمزنگاری چگونه کار می‌کند", "How encryption works")}{" "}
+            </span>
+            <span className="micro-label">
+              {" "}
+              {l("نگاهی به درون", "A VISUAL LOOK INSIDE")}{" "}
+            </span>
           </div>
           <div className="cinema-content">
             <div className="cinema-art">
               <Scene3D kind="core" />
               <div className="cipher-ticker" aria-hidden="true">
                 <span>
-                  PIMX · 256 · KEY · CIPHER · LOCAL · PIMX · 256 · KEY · CIPHER
-                  · LOCAL ·{" "}
+                  {" "}
+                  {l(
+                    "PIMX · ۲۵۶ · کلید · رمزنگاری · محلی · PIMX · ۲۵۶ · کلید · رمزنگاری · محلی ·",
+                    "PIMX · 256 · KEY · CIPHER · LOCAL · PIMX · 256 · KEY · CIPHER · LOCAL ·",
+                  )}{" "}
                 </span>
               </div>
             </div>
@@ -119,7 +128,9 @@ export function LivingSections({
               <h2>
                 {l("متن و فایل شما", "Your text and files")}
                 <br />
-                <span>{l("در یک بسته رمز‌شده", "in an encrypted package")}</span>
+                <span>
+                  {l("در یک بسته رمز‌شده", "in an encrypted package")}
+                </span>
               </h2>
               <p>
                 {l(
@@ -129,15 +140,15 @@ export function LivingSections({
               </p>
               <div className="cipher-flow">
                 <span>
-                  <FileText size={14} /> INPUT
+                  <FileText size={14} /> {l("ورودی", "INPUT")}{" "}
                 </span>
                 <i />
                 <span>
-                  <KeyRound size={14} /> KEY
+                  <KeyRound size={14} /> {l("کلید", "KEY")}{" "}
                 </span>
                 <i />
                 <span>
-                  <ShieldCheck size={14} /> CIPHER
+                  <ShieldCheck size={14} /> {l("رمزنگاری", "CIPHER")}{" "}
                 </span>
               </div>
               <button className="btn primary" onClick={() => nav("studio")}>
@@ -153,16 +164,31 @@ export function LivingSections({
             </div>
           </div>
           <div className="cinema-baseline">
-            <span>YOUR CONTENT / YOUR KEY / YOUR CONTROL</span>
+            <span>
+              {" "}
+              {l(
+                "محتوای شما / کلید شما / اختیار شما",
+                "YOUR CONTENT / YOUR KEY / YOUR CONTROL",
+              )}{" "}
+            </span>
             <i className="live-dot" />
-            <span>DESIGNED TO STAY PERSONAL</span>
+            <span>
+              {" "}
+              {l(
+                "طراحی‌شده برای استفاده شخصی",
+                "DESIGNED TO STAY PERSONAL",
+              )}{" "}
+            </span>
           </div>
         </div>
       </Reveal>
       <section className="layers-section wrap section">
         <Reveal className="section-heading">
           <div>
-            <span className="eyebrow">EXPLORE THE LAYERS</span>
+            <span className="eyebrow">
+              {" "}
+              {l("مراحل را بررسی کنید", "EXPLORE THE LAYERS")}{" "}
+            </span>
             <h2>
               {l("مسیر رمزنگاری", "The encryption process")}
               <br />
@@ -181,7 +207,10 @@ export function LivingSections({
         <div className="layers-explorer">
           <Reveal className="layers-sculpture">
             <Scene3D kind="layers" active={layer} />
-            <span className="layers-caption">INTERACTIVE / 0{layer + 1}</span>
+            <span className="layers-caption">
+              {" "}
+              {l("تعاملی / ۰", "INTERACTIVE / 0")} {layer + 1}
+            </span>
           </Reveal>
           <Reveal className="layers-controls">
             <div className="layer-options">
@@ -208,11 +237,22 @@ export function LivingSections({
       </section>
       <Reveal className="connection-section wrap">
         <div className="connection-copy">
-          <span className="eyebrow">CONNECTED WORLD / PRIVATE SPACE</span>
+          <span className="eyebrow">
+            {" "}
+            {l(
+              "دنیای متصل / فضای خصوصی",
+              "CONNECTED WORLD / PRIVATE SPACE",
+            )}{" "}
+          </span>
           <h2>
-            {l("چه زمانی داده ارسال می‌شود؟", "When does data leave your device?")}
+            {l(
+              "چه زمانی داده ارسال می‌شود؟",
+              "When does data leave your device?",
+            )}
             <br />
-            <span>{l("اشتراک لینک اختیاری است.", "The choice stays this device.")}</span>
+            <span>
+              {l("اشتراک لینک اختیاری است.", "Link sharing is optional.")}
+            </span>
           </h2>
           <div className="connection-options">
             {modes.map((m, i) => (
@@ -252,10 +292,16 @@ export function LivingSections({
           </div>
           <div className="panic-ring" />
           <div className="panic-ring second" />
-          <span>ONE TOUCH / YOUR PRIVACY</span>
+          <span>
+            {" "}
+            {l("یک لمس / حریم خصوصی شما", "ONE TOUCH / YOUR PRIVACY")}{" "}
+          </span>
         </Ambient>
         <div>
-          <span className="eyebrow">TAKE BACK YOUR SPACE</span>
+          <span className="eyebrow">
+            {" "}
+            {l("اختیار فضای خود را به دست بگیرید", "TAKE BACK YOUR SPACE")}{" "}
+          </span>
           <h2>
             {l("قفل سریع", "Quick lock")}
             <br />

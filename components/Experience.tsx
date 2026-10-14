@@ -58,6 +58,7 @@ import { AnimatePresence, motion, ease, useMotionEnabled } from "./motion";
 import { Toast } from "./Toast";
 import { SiteFooter } from "./SiteFooter";
 import { AppLoader } from "./AppLoader";
+import { LanguageSelect } from "./LanguageSelect";
 export type Route =
   | "home"
   | "studio"
@@ -160,7 +161,7 @@ export function Experience() {
     window.addEventListener("keydown", key);
     if (import.meta.env.PROD && "serviceWorker" in navigator)
       navigator.serviceWorker
-        .register("/sw.js")
+        .register("/sw.js", { updateViaCache: "none" })
         .catch(() =>
           notify(
             l(
@@ -235,14 +236,16 @@ export function Experience() {
           <button
             className="brand"
             onClick={() => nav("home")}
-            aria-label="PIMX WIDE home"
+            aria-label={l("خانه PIMX WIDE", "PIMX WIDE home")}
           >
             <span className="brand-symbol">
               <Fingerprint size={25} />
             </span>
             <span>
               PIMX<span className="brand-wide">WIDE</span>
-              <small>
+              <small
+                title={l("ابزارهای رمزنگاری محلی", "Local encryption tools")}
+              >
                 {l("ابزارهای رمزنگاری محلی", "Local encryption tools")}
               </small>
             </span>
@@ -272,17 +275,9 @@ export function Experience() {
             >
               <Command size={18} />
             </button>
-            <button
-              className="icon-btn"
-              onClick={() =>
-                update({ lang: prefs.lang === "fa" ? "en" : "fa" })
-              }
-              aria-label={l("تغییر زبان", "Change language")}
-            >
-              <span className="language-code">
-                {prefs.lang === "fa" ? "EN" : "فا"}
-              </span>
-            </button>
+            <div className="header-language">
+              <LanguageSelect compact />
+            </div>
             <button
               className="icon-btn"
               onClick={() =>
@@ -354,9 +349,7 @@ export function Experience() {
             }}
             transition={{ duration: animated ? 0.4 : 0, ease }}
           >
-            <Suspense
-              fallback={<AppLoader />}
-            >
+            <Suspense fallback={<AppLoader />}>
               {route === "home" && <Landing nav={nav} lock={lock} />}
               {route === "studio" && (
                 <Studio

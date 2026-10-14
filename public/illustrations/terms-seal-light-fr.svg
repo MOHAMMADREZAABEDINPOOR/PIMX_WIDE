@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="760" viewBox="0 0 820 760" fill="none">
+<defs><linearGradient id="rim" x1="253" y1="244" x2="567" y2="544" gradientUnits="userSpaceOnUse"><stop stop-color="#f0debd"/><stop offset=".4" stop-color="#9a7530"/><stop offset=".7" stop-color="#91743d"/><stop offset="1" stop-color="#e6ca97"/></linearGradient><linearGradient id="paper" x1="176" y1="100" x2="518" y2="646" gradientUnits="userSpaceOnUse"><stop stop-color="#f8f0e1"/><stop offset=".65" stop-color="#eadcc3"/><stop offset="1" stop-color="#e5d3b1"/></linearGradient><linearGradient id="seal" x1="329" y1="327" x2="534" y2="513" gradientUnits="userSpaceOnUse"><stop stop-color="#f5ebd9"/><stop offset="1" stop-color="#e5d6ba"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="20"/></filter></defs>
+<ellipse cx="421" cy="638" rx="209" ry="52" fill="#000" opacity=".09" filter="url(#shadow)"/>
+<path d="M207 138L553 196L605 611L269 662Z" fill="#b5a079" opacity=".3" stroke="#9a7530" stroke-opacity=".3"/>
+<path d="M204 117L550 176L591 596L252 643Z" fill="#d8c5a2" opacity=".6" stroke="#9a7530" stroke-opacity=".4"/>
+<path d="M220 91L556 155L570 577L230 620Z" fill="url(#paper)" stroke="#9a7530" stroke-opacity=".6"/>
+<path d="M244 121L532 175L544 554L256 590Z" stroke="#897246" stroke-opacity=".28"/>
+<path d="M276 190L493 230M276 211L439 239M277 253L483 284M277 274L459 300M278 300L500 327M279 326L420 344" stroke="#6a5837" stroke-opacity=".24" stroke-width="3"/>
+<g font-family="Arial,sans-serif" fill="#5b4a2b"><text x="275" y="162" font-size="10" letter-spacing="3" transform="rotate(10 275 162)">PIMX / L'ACCORD</text><text x="282" y="542" font-size="7" letter-spacing="2" transform="rotate(-3 282 542)">VOS CHOIX. CLAIREMENT EXPLIQUÉ.</text></g>
+<path d="M367 460L352 615L409 579L450 631L456 464Z" fill="#c9ab73" stroke="#9a7530" stroke-opacity=".4"/><path d="M381 469L376 588L406 566L429 600L435 478" stroke="#9a7530" stroke-opacity=".22"/>
+<path d="M327 375L347 345L381 330L418 331L448 319L480 337L514 344L529 375L551 405L543 440L550 475L521 500L503 530L467 535L433 549L401 533L366 532L347 502L321 478L327 443L316 411Z" fill="url(#rim)" stroke="#c6a464"/>
+<circle cx="434" cy="430" r="99" fill="url(#seal)" stroke="#aa8239" stroke-width="2"/><circle cx="434" cy="430" r="85" stroke="#99732d" stroke-opacity=".5" stroke-dasharray="1 7"/><circle cx="434" cy="430" r="69" stroke="#99732d" stroke-opacity=".3"/>
+<path d="M409 409L435 393L459 409L455 444L435 459L414 444Z" fill="#9a7530" fill-opacity=".08" stroke="url(#rim)" stroke-width="2"/><path d="M421 427L432 438L450 418" stroke="#9a7530" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M398 467L469 468" stroke="#9a7530" stroke-opacity=".25"/><text x="404" y="482" font-family="Arial,sans-serif" font-size="6" letter-spacing="1.4" fill="#9a7530">CLAIR PAR CONCEPTION</text>
+<path d="M610 179L685 415L672 449L648 429L576 193Z" fill="#faf4e8" stroke="url(#rim)"/><path d="M600 188L666 412" stroke="#9a7530" stroke-opacity=".65" stroke-width="3"/><path d="M672 449L658 419L678 412Z" fill="#9a7530"/>
+<path d="M168 296L168 509M164 309H172M164 492H172M277 667L563 634" stroke="#9a7530" stroke-opacity=".15"/>
+<g fill="#9a7530" opacity=".45"><circle cx="168" cy="296" r="2"/><circle cx="563" cy="634" r="2"/><circle cx="637" cy="512" r="2"/></g>
+</svg>

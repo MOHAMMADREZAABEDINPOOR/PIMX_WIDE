@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660" fill="none">
+<defs>
+<linearGradient id="gold" x1="130" y1="100" x2="760" y2="580" gradientUnits="userSpaceOnUse"><stop stop-color="#f3e6cd"/><stop offset=".42" stop-color="#dfbc7a"/><stop offset="1" stop-color="#80632c"/></linearGradient>
+<linearGradient id="metal" x1="245" y1="220" x2="622" y2="460" gradientUnits="userSpaceOnUse"><stop stop-color="#38352e"/><stop offset=".55" stop-color="#1A1C1B"/><stop offset="1" stop-color="#0E100F"/></linearGradient>
+<linearGradient id="screen" x1="345" y1="190" x2="590" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#2a2823"/><stop offset="1" stop-color="#161411"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#dfbc7a" stop-opacity=".16"/><stop offset="1" stop-color="#dfbc7a" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-40%" y="-40%" width="180%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+<pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" stroke="#dfbc7a" stroke-opacity=".07"/></pattern>
+</defs>
+<ellipse cx="492" cy="344" rx="405" ry="260" fill="url(#glow)"/><path d="M50 475L505 218L933 459L478 716Z" fill="url(#grid)" opacity=".5"/>
+<ellipse cx="490" cy="489" rx="254" ry="57" fill="#000" opacity=".25" filter="url(#shadow)"/>
+<path d="M120 350L315 460L490 360L683 470L849 374M130 550L337 431M503 565L687 459M489 150V256" stroke="#dfbc7a" stroke-opacity=".25" stroke-dasharray="5 8"/>
+<path d="M219 344L474 197L736 346L481 494Z" fill="url(#metal)" stroke="url(#gold)" stroke-opacity=".6"/>
+<path d="M219 344V374L481 525V494Z" fill="#1a1916" stroke="#dfbc7a" stroke-opacity=".22"/><path d="M481 494L736 346V376L481 525Z" fill="#26241f" stroke="#dfbc7a" stroke-opacity=".32"/>
+<path d="M250 341L474 212L704 342L481 471Z" fill="#23211d" stroke="#dfbc7a" stroke-opacity=".2"/>
+<path d="M335 315L483 232L634 319L486 404Z" fill="url(#screen)" stroke="url(#gold)" stroke-width="1.5"/>
+<path d="M350 315L483 241L619 319L486 395Z" stroke="#dfbc7a" stroke-opacity=".15"/>
+<path d="M438 302L482 279L527 303L520 343L483 368L446 345Z" fill="#dfbc7a" fill-opacity=".08" stroke="url(#gold)" stroke-width="2"/>
+<path d="M464 323L481 333L504 312" stroke="#dfbc7a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M290 350L331 373M320 334L360 357M350 318L381 336M548 401L588 378M578 416L617 393M607 434L647 410" stroke="#dfbc7a" stroke-opacity=".22" stroke-width="3" stroke-linecap="round"/>
+<path d="M358 418L406 443L481 402M504 450L542 427" stroke="#dfbc7a" stroke-opacity=".5"/>
+<circle cx="481" cy="402" r="3" fill="#dfbc7a"/><circle cx="504" cy="450" r="3" fill="#dfbc7a"/><circle cx="315" cy="460" r="4" fill="#dfbc7a"/>
+<g><path d="M86 289L175 240L263 290L174 341Z" fill="#272520" stroke="url(#gold)" stroke-opacity=".6"/><path d="M86 289V316L174 367V341Z" fill="#1a1916" stroke="#dfbc7a" stroke-opacity=".22"/><path d="M174 341L263 290V318L174 367Z" fill="#25231e" stroke="#dfbc7a" stroke-opacity=".32"/><path d="M131 286L169 265L207 287L170 308Z" stroke="#dfbc7a" stroke-opacity=".5"/><path d="M139 290L169 307M146 283L178 301M155 279L185 296" stroke="#dfbc7a" stroke-opacity=".4"/></g>
+<g><path d="M709 265L798 216L887 267L798 318Z" fill="#292620" stroke="url(#gold)" stroke-opacity=".6"/><path d="M709 265V294L798 347V318Z" fill="#1a1916" stroke="#dfbc7a" stroke-opacity=".22"/><path d="M798 318L887 267V296L798 347Z" fill="#28251f" stroke="#dfbc7a" stroke-opacity=".3"/><path d="M783 260V250C783 239 802 235 810 243L815 247V263" stroke="#dfbc7a" stroke-width="2"/><path d="M774 260L797 246L821 260V281L797 295L774 281Z" fill="#dfbc7a" fill-opacity=".15" stroke="url(#gold)"/><circle cx="797" cy="267" r="3" fill="#dfbc7a"/></g>
+<g opacity=".6"><path d="M431 146L489 113L547 146L489 180Z" fill="#292620" stroke="#dfbc7a" stroke-opacity=".4"/><path d="M462 145L489 130L516 145L489 161Z" stroke="#dfbc7a" stroke-opacity=".7"/></g>
+<path d="M105 415L197 467M790 474L850 440M360 565L393 546" stroke="#dfbc7a" stroke-opacity=".2"/>
+<g fill="#dfbc7a" opacity=".6"><circle cx="105" cy="415" r="2"/><circle cx="850" cy="440" r="2"/><circle cx="393" cy="546" r="2"/><circle cx="197" cy="467" r="2"/></g>
+<g font-family="Arial,sans-serif" fill="#d8b980" font-size="8" letter-spacing="2"><text transform="translate(105 387)">ورودی شما</text><text transform="translate(741 374)">نسخه محافظت‌شده</text><text transform="translate(411 573)" opacity=".6">پردازش محلی / در طراحی</text></g>
+</svg>

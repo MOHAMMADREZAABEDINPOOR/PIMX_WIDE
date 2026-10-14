@@ -1,0 +1,62 @@
+.header-language {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+.header-inner .brand {
+  min-width: 0;
+}
+.header-inner .brand > span:last-child {
+  min-width: 0;
+}
+.header-inner .brand small {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: normal;
+}
+.header-language .select-trigger {
+  min-height: 34px;
+  padding: 5px 8px;
+  gap: 5px;
+  font-size: 12px;
+}
+.header-language .select-trigger > span:not(.select-value-icon) {
+  max-width: 76px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+:is(html[lang="fa"], html[lang="zh-CN"], html[lang="ja"], html[lang="ko"])
+  :is(
+    .eyebrow,
+    .micro-label,
+    .story-badge,
+    .scene-coordinate,
+    .system-caption
+  ) {
+  letter-spacing: normal;
+}
+@media (max-width: 650px) {
+  .header-inner .brand small {
+    max-width: 110px;
+  }
+  .header-language .select-trigger {
+    width: 55px;
+    min-width: 55px;
+    padding: 4px 6px;
+    justify-content: center;
+  }
+  .header-language .select-trigger > span:not(.select-value-icon) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .header-language .select-value-icon {
+    width: 20px;
+    flex-shrink: 0;
+  }
+}

@@ -13,6 +13,10 @@ if (
 for (const name of ["dist", "functions", "migrations"])
   await cp(join(root, name), join(sandbox, name), { recursive: true });
 await writeFile(
+  join(sandbox, "dist", "sw-old.js"),
+  "self.addEventListener('install',e=>e.waitUntil(caches.open('pimx-obsolete').then(c=>c.put('/index.html',new Response('OLD DESIGN'))).then(()=>self.skipWaiting())));self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));",
+);
+await writeFile(
   join(sandbox, "wrangler.toml"),
   `name="pimx-test"\ncompatibility_date="2024-12-01"\npages_build_output_dir="dist"\n[[d1_databases]]\nbinding="PIMX_DB"\ndatabase_name="pimx-test"\ndatabase_id="00000000-0000-0000-0000-000000000000"\nmigrations_dir="migrations"\n`,
 );

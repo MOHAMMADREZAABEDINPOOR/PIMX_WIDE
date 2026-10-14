@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useSceneActivity } from "./motion";
 import "./system-visual.css";
+import { usePreferences } from "../contexts/Preferences";
 
 export type SystemKind = "cipher" | "archive" | "key" | "relay" | "privacy";
 export function SystemVisual({
@@ -21,6 +22,7 @@ export function SystemVisual({
   kind: SystemKind;
   compact?: boolean;
 }) {
+  const { l } = usePreferences();
   const ref = useRef<HTMLDivElement>(null);
   const enabled = useSceneActivity(ref);
   return (
@@ -58,12 +60,12 @@ export function SystemVisual({
             </div>
             <div className="cipher-ticket ticket-plain">
               <FileText size={23} />
-              <span>INPUT</span>
+              <span> {l("ورودی", "INPUT")} </span>
               <b>•••</b>
             </div>
             <div className="cipher-ticket ticket-sealed">
               <FileKey2 size={23} />
-              <span>SEALED</span>
+              <span> {l("محافظت‌شده", "SEALED")} </span>
               <b>0xA7</b>
             </div>
             <div className="cipher-transfer">
@@ -77,7 +79,7 @@ export function SystemVisual({
           <div className="archive-apparatus">
             <div className="archive-lid">
               <Database size={25} />
-              <span>PRIVATE ARCHIVE</span>
+              <span> {l("آرشیو خصوصی", "PRIVATE ARCHIVE")} </span>
               <i />
             </div>
             {[0, 1, 2].map((i) => (
@@ -95,7 +97,7 @@ export function SystemVisual({
               <FileText size={26} />
               <i />
               <i />
-              <span>Encrypted</span>
+              <span> {l("رمزشده", "Encrypted")} </span>
             </div>
           </div>
         )}
@@ -104,7 +106,7 @@ export function SystemVisual({
             <div className="key-orbit" />
             <div className="key-token">
               <KeyRound size={85} strokeWidth={1.3} />
-              <span>YOUR SECRET</span>
+              <span> {l("راز شما", "YOUR SECRET")} </span>
             </div>
             <div className="key-code">K7 · mQ · 9x · P4</div>
             <div className="key-dot dot-one" />
@@ -120,11 +122,11 @@ export function SystemVisual({
             </div>
             <div className="relay-envelope envelope-first">
               <FileKey2 size={35} />
-              <span>SEALED PACKAGE</span>
+              <span> {l("بسته محافظت‌شده", "SEALED PACKAGE")} </span>
             </div>
             <div className="relay-envelope envelope-second">
               <ShieldCheck size={35} />
-              <span>PRIVATE DELIVERY</span>
+              <span> {l("ارسال خصوصی", "PRIVATE DELIVERY")} </span>
             </div>
             <div className="relay-link">
               <Link2 size={32} />
@@ -141,7 +143,7 @@ export function SystemVisual({
                   <i />
                   <i />
                 </span>
-                <b>YOUR DEVICE</b>
+                <b> {l("دستگاه شما", "YOUR DEVICE")} </b>
                 <LockKeyhole size={15} />
               </div>
               <div className="window-workspace">
@@ -154,22 +156,25 @@ export function SystemVisual({
                 <ArrowRight size={20} />
                 <div className="window-shield">
                   <ShieldCheck size={58} strokeWidth={1.2} />
-                  <span>LOCAL ENGINE</span>
+                  <span> {l("موتور محلی", "LOCAL ENGINE")} </span>
                 </div>
               </div>
               <div className="window-footer">
                 <span className="live-dot" />
-                <span>PRIVATE BY DESIGN</span>
+                <span>
+                  {" "}
+                  {l("طراحی‌شده برای حریم خصوصی", "PRIVATE BY DESIGN")}{" "}
+                </span>
                 <span>AES–256</span>
               </div>
             </div>
             <div className="privacy-keystone">
               <KeyRound size={25} />
-              <span>YOUR KEY</span>
+              <span> {l("کلید شما", "YOUR KEY")} </span>
             </div>
             <div className="privacy-output">
               <FileKey2 size={27} />
-              <span>Encrypted COPY</span>
+              <span> {l("نسخه رمزشده", "Encrypted COPY")} </span>
             </div>
           </div>
         )}
@@ -178,10 +183,10 @@ export function SystemVisual({
         <div className="system-caption">
           <span>
             {kind === "archive"
-              ? "ON-DEVICE COLLECTION"
+              ? l("مجموعه روی دستگاه", "ON-DEVICE COLLECTION")
               : kind === "privacy"
-                ? "YOUR DATA / YOUR CONTROL"
-                : "LOCAL CIPHER ENGINE"}
+                ? l("داده‌های شما / اختیار شما", "YOUR DATA / YOUR CONTROL")
+                : l("موتور رمزنگاری محلی", "LOCAL CIPHER ENGINE")}
           </span>
           <span>+</span>
         </div>

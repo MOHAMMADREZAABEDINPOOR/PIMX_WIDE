@@ -4,7 +4,8 @@ import { readFile } from "node:fs/promises";
 const secret = "a-long-test-password";
 async function english(page: any, path = "/") {
   await page.goto(path);
-  await page.getByRole("button", { name: "تغییر زبان", exact: true }).click();
+  await page.locator(".header-language [role=combobox]").click();
+  await page.getByRole("option", { name: /English/ }).click();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
 }
 test("landing, RTL mobile, English navigation and quick commands have no overflow or runtime errors", async ({
@@ -13,7 +14,9 @@ test("landing, RTL mobile, English navigation and quick commands have no overflo
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("فایل‌های شخصی");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "فایل‌های شخصی",
+  );
   await page.screenshot({
     path: "test-results/landing-desktop-fa.png",
     fullPage: true,
@@ -36,7 +39,8 @@ test("landing, RTL mobile, English navigation and quick commands have no overflo
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "استودیوی",
   );
-  await page.getByRole("button", { name: "تغییر زبان" }).click();
+  await page.locator(".header-language [role=combobox]").click();
+  await page.getByRole("option", { name: /English/ }).click();
   await page.keyboard.press("Control+k");
   await page.getByPlaceholder("Search tools…").fill("password");
   await page

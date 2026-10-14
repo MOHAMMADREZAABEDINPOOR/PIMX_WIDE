@@ -2,8 +2,10 @@ import React from "react";
 import { Cpu, FileKey2, Link2, LockKeyhole, ShieldAlert } from "lucide-react";
 import { Ambient } from "./motion";
 import "./privacy-path.css";
+import { usePreferences } from "../contexts/Preferences";
 
 export function PrivacyPathVisual({ path }: { path: number }) {
+  const { l } = usePreferences();
   return (
     <Ambient className={`privacy-path-art path-art-${path}`}>
       {path === 0 && (
@@ -11,7 +13,7 @@ export function PrivacyPathVisual({ path }: { path: number }) {
           <div className="processor-base" />
           <div className="processor-chip">
             <Cpu size={42} strokeWidth={1.3} />
-            <span>LOCAL / AES</span>
+            <span> {l("محلی / AES", "LOCAL / AES")} </span>
             {Array.from({ length: 12 }, (_, i) => (
               <i
                 key={i}
@@ -30,7 +32,7 @@ export function PrivacyPathVisual({ path }: { path: number }) {
       {path === 1 && (
         <div className="path-storage">
           <div className="storage-disk disk-top">
-            <span>Encrypted</span>
+            <span> {l("رمزشده", "Encrypted")} </span>
           </div>
           <div className="storage-disk disk-middle">
             <i />
@@ -57,11 +59,11 @@ export function PrivacyPathVisual({ path }: { path: number }) {
           </div>
           <div className="delivery-package package-source">
             <FileKey2 size={28} />
-            <span>SEALED</span>
+            <span> {l("محافظت‌شده", "SEALED")} </span>
           </div>
           <div className="delivery-package package-destination">
             <LockKeyhole size={28} />
-            <span>RECEIVED</span>
+            <span> {l("دریافت‌شده", "RECEIVED")} </span>
           </div>
           <div className="delivery-link">
             <Link2 size={23} />
@@ -75,7 +77,7 @@ export function PrivacyPathVisual({ path }: { path: number }) {
               <i />
               <i />
               <i />
-              <span>OPT-IN</span>
+              <span> {l("با رضایت شما", "OPT-IN")} </span>
             </div>
             <div className="analytics-bars">
               {[32, 54, 43, 72, 61].map((h, i) => (
@@ -94,7 +96,7 @@ export function PrivacyPathVisual({ path }: { path: number }) {
           </div>
           <div className="analytics-choice">
             <i />
-            <span>YOUR CHOICE</span>
+            <span> {l("انتخاب شما", "YOUR CHOICE")} </span>
           </div>
         </div>
       )}
@@ -104,7 +106,10 @@ export function PrivacyPathVisual({ path }: { path: number }) {
           <div className="limits-shield">
             <ShieldAlert size={62} strokeWidth={1.1} />
           </div>
-          <span className="limits-note">KNOW THE LIMITS</span>
+          <span className="limits-note">
+            {" "}
+            {l("محدودیت‌ها را بشناسید", "KNOW THE LIMITS")}{" "}
+          </span>
           <i className="limit-point point-first" />
           <i className="limit-point point-second" />
         </div>

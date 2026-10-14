@@ -12,6 +12,7 @@ import "./experience.css";
 import "./components/refinements.css";
 import "./components/redesign.css";
 import "./components/polish.css";
+import "./components/languages.css";
 export default function App() {
   return (
     <PreferencesProvider>

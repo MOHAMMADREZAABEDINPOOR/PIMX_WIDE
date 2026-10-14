@@ -121,7 +121,9 @@ export function PasswordPage({ toast }: { toast: (s: string) => void }) {
           <div className="strength">
             <div>
               <span>{l("تصادفی بودن تخمینی", "Estimated randomness")}</span>
-              <strong>{bits} bits</strong>
+              <strong>
+                {bits} {l("بیت", "bits")}{" "}
+              </strong>
             </div>
             <div className="strength-track">
               <i style={{ width: `${Math.min(100, bits / 1.28)}%` }} />

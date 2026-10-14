@@ -19,7 +19,7 @@ interface Stats {
   countries: { country: string; count: number }[];
 }
 export function AdminPage() {
-  const { l } = usePreferences(),
+  const { l, prefs } = usePreferences(),
     [auth, setAuth] = useState(false),
     [pass, setPass] = useState(""),
     [busy, setBusy] = useState(false),
@@ -232,7 +232,13 @@ export function AdminPage() {
               </h2>
               {stats?.devices.map((d) => (
                 <div className="stat-row" key={d.device}>
-                  <span>{d.device}</span>
+                  <span>
+                    {d.device === "Mobile"
+                      ? l("موبایل", "Mobile")
+                      : d.device === "Tablet"
+                        ? l("تبلت", "Tablet")
+                        : l("رایانه", "Desktop")}
+                  </span>
                   <strong>{d.count}</strong>
                 </div>
               ))}
@@ -244,7 +250,14 @@ export function AdminPage() {
               </h2>
               {stats?.countries.map((d) => (
                 <div className="stat-row" key={d.country}>
-                  <span>{d.country}</span>
+                  <span>
+                    {/^[A-Z]{2}$/.test(d.country)
+                      ? new Intl.DisplayNames(
+                          [prefs.lang === "zh" ? "zh-CN" : prefs.lang],
+                          { type: "region" },
+                        ).of(d.country)
+                      : l("نامشخص", "Unknown")}
+                  </span>
                   <strong>{d.count}</strong>
                 </div>
               ))}

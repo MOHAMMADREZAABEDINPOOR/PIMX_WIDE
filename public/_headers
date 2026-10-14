@@ -8,3 +8,13 @@
   Cache-Control: no-cache
 /index.html
   Cache-Control: no-cache
+/
+  Cache-Control: no-cache
+/boot.js
+  Cache-Control: no-cache
+/boot-messages.js
+  Cache-Control: no-cache
+/loader.css
+  Cache-Control: no-cache
+/build-info.json
+  Cache-Control: no-store

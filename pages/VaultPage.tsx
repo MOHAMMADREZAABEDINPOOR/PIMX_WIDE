@@ -192,7 +192,13 @@ export function VaultPage({
         <div className="vault-unlock">
           <div className="unlock-art">
             <SystemVisual kind="archive" />
-            <div className="eyebrow">PRIVATE BY DESIGN / LOCAL BY CHOICE</div>
+            <div className="eyebrow">
+              {" "}
+              {l(
+                "حریم خصوصی در طراحی / پردازش محلی با انتخاب شما",
+                "PRIVATE BY DESIGN / LOCAL BY CHOICE",
+              )}{" "}
+            </div>
           </div>
           <form className="panel unlock-form" onSubmit={unlock}>
             <span className="tool-icon">
@@ -384,7 +390,7 @@ export function VaultPage({
                     <h3>{i.title}</h3>
                     <small className="muted">
                       {new Date(i.created).toLocaleDateString(
-                        prefs.lang === "fa" ? "fa-IR" : "en-US",
+                        prefs.lang === "zh" ? "zh-CN" : prefs.lang,
                       )}
                     </small>
                     <div className="tags">

@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "PIMX WIDE | 로컬 암호화 도구",
+  "short_name": "PIMX WIDE",
+  "description": "텍스트 및 파일 암호화, 로컬 볼트 및 비밀번호 생성기.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#101112",
+  "theme_color": "#101112",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "ko",
+  "dir": "ltr"
+}

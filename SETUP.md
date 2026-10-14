@@ -1,6 +1,6 @@
 # PIMX WIDE v2
 
-The existing React/Vite app now includes the landing experience, a unified text/file/folder studio, an encrypted device vault, password/passphrase generation, portable packages and QR, server-limited links, preferences, quick lock, an offline app shell and authenticated analytics. The interface supports Persian and English. Legacy AES-GCM packages can still be decrypted. Passphrases select at least six words from the 7,776-word EFF Long Wordlist with browser cryptographic randomness; see THIRD_PARTY.md for attribution.
+The existing React/Vite app includes the landing experience, a unified text/file/folder studio, an encrypted device vault, password/passphrase generation, portable packages and QR, optional server-limited links, preferences, quick lock, an offline app shell and authenticated analytics. The interface supports Persian, English, Russian, Chinese, German, French, Japanese and Korean. Legacy AES-GCM packages can still be decrypted. Passphrases select at least six English words from the 7,776-word EFF Long Wordlist with browser cryptographic randomness; see THIRD_PARTY.md for attribution.
 
 ## Local application
 
@@ -35,12 +35,12 @@ ADMIN_PASSWORD_HASH=<salt:hash from generator>
 SESSION_SECRET=<secret from generator>
 ```
 
-The placeholder D1 UUID is intentional for local development; it is not a production database. Without secrets, admin login reports that setup is required. Rotate `SESSION_SECRET` to invalidate existing sessions.
+The placeholder D1 UUID appears only in `wrangler.local.toml` for local emulation. Production `wrangler.toml` intentionally has no D1 binding: link sharing and administrator analytics are unavailable until a database and secrets are configured. The interface explains that links are disabled and keeps downloads and direct QR available. Rotate `SESSION_SECRET` to invalidate existing sessions.
 
 ## Existing Cloudflare Pages deployment
 
 1. Create the database: `npx wrangler d1 create pimx-private`.
-2. Replace only the D1 `database_id` in `wrangler.toml` with the returned UUID.
+2. Copy the `[[d1_databases]]` block from `wrangler.local.toml` into `wrangler.toml`, then replace its `database_id` with the real UUID and keep the binding `PIMX_DB`.
 3. Apply the schema: `npx wrangler d1 migrations apply PIMX_DB --remote`.
 4. Configure `ADMIN_PASSWORD_HASH` and `SESSION_SECRET` as **encrypted secrets**, separately for production and preview in Pages settings.
 5. Build with `npm run build` and use `dist` as the Pages output directory. Keep `functions/` in the source deployment.
@@ -60,6 +60,10 @@ Visit analytics are disabled by default. With consent, the database stores time,
 - No independent security audit has been performed. Verify recovery before deleting original data.
 
 ## Verification
+
+Language options are available in the header and settings. Persian uses RTL; the other languages use LTR. The selected language survives reloads. UI dictionaries live under `data/locales`; startup screens, installation manifests and SVG artwork are localized during the build. The build fails for missing translations or changed placeholders. Translation drafting is a one-time developer operation (`scripts/translate-catalog.mjs`), never a browser or production-build network request. Review generated copy before committing it.
+
+`/build-info.json` exposes the deployed Git revision. HTML, bootstrap scripts and the service worker revalidate online; offline mode uses the app shell. A replacement service worker activates after precaching succeeds and removes obsolete PIMX caches, without reloading a user's active session.
 
 ```powershell
 npm run typecheck

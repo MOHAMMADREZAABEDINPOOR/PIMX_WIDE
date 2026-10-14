@@ -61,10 +61,14 @@ export function Select({
       90,
       Math.min(height, above ? availableAbove : availableBelow),
     );
+    const width = Math.min(
+      compact ? Math.max(r.width, 220) : r.width,
+      innerWidth - 16,
+    );
     setPosition({
-      left: Math.max(8, Math.min(r.left, innerWidth - r.width - 8)),
+      left: Math.max(8, Math.min(r.left, innerWidth - width - 8)),
       top: above ? r.top - maxHeight - 7 : r.bottom + 7,
-      width: Math.min(r.width, innerWidth - 16),
+      width,
       maxHeight,
     });
   }

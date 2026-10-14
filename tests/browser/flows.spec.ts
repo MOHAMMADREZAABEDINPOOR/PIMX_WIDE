@@ -5,7 +5,8 @@ import { join, resolve, dirname, basename } from "node:path";
 const secret = "a-long-test-password";
 async function en(page: any, path: string) {
   await page.goto(path);
-  await page.getByRole("button", { name: "تغییر زبان", exact: true }).click();
+  await page.locator(".header-language [role=combobox]").click();
+  await page.getByRole("option", { name: /English/ }).click();
 }
 test("QR, limited link creation, explicit retrieval and decryption form a complete flow", async ({
   page,

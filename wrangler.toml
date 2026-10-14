@@ -2,13 +2,9 @@ name = "pimx-wide"
 compatibility_date = "2024-12-01"
 pages_build_output_dir = "dist"
 
-# Local development works with this placeholder. Before remote deployment, create
-# a D1 database and replace database_id with its actual UUID (see SETUP.md).
-[[d1_databases]]
-binding = "PIMX_DB"
-database_name = "pimx-private"
-database_id = "00000000-0000-0000-0000-000000000000"
-migrations_dir = "migrations"
+# Production currently runs device-local tools without a D1 binding.
+# Add a real database UUID here when enabling links and administrator analytics.
+# Local database development uses wrangler.local.toml instead.
 
 # KV Namespace binding — must match the binding name configured in
 # Cloudflare Dashboard → Pages → Your Project → Settings → Functions → KV namespace bindings

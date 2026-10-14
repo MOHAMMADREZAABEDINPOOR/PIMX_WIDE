@@ -158,7 +158,8 @@ test("availability distinguishes browser connection from server health and handl
   await expect(
     page.getByRole("button", { name: "بررسی اتصال سرور" }),
   ).toBeEnabled();
-  await page.getByRole("button", { name: "تغییر زبان", exact: true }).click();
+  await page.locator(".header-language [role=combobox]").click();
+  await page.getByRole("option", { name: /English/ }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Service availability",
   );

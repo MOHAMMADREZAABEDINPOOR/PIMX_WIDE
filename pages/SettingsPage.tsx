@@ -14,6 +14,8 @@ import { useVault } from "../contexts/VaultContext";
 import { deleteVault } from "../services/vault";
 import { Modal } from "../components/ui";
 import { Select } from "../components/Select";
+import { LanguageSelect } from "../components/LanguageSelect";
+import { languageInfo } from "../data/i18n";
 import { StoryHero } from "../components/StoryHero";
 import { Ambient } from "../components/motion";
 import {
@@ -84,7 +86,7 @@ export function SettingsPage({
             <Clock size={13} /> {prefs.idle} {l("دقیقه", "min")}
           </span>
           <span>
-            <Globe2 size={13} /> {prefs.lang === "fa" ? "فارسی" : "English"}
+            <Globe2 size={13} /> {languageInfo(prefs.lang).native}
           </span>
         </div>
       </div>
@@ -205,25 +207,7 @@ export function SettingsPage({
             </label>
             <div className="field-label">
               {l("زبان", "Language")}
-              <Select
-                label={l("زبان", "Language")}
-                value={prefs.lang}
-                onChange={(value) => update({ lang: value as "fa" | "en" })}
-                options={[
-                  {
-                    value: "fa",
-                    label: "فارسی",
-                    description: "راست به چپ",
-                    icon: <Globe2 size={17} />,
-                  },
-                  {
-                    value: "en",
-                    label: "English",
-                    description: "Left to right",
-                    icon: <Globe2 size={17} />,
-                  },
-                ]}
-              />
+              <LanguageSelect />
             </div>
           </section>
           <section id="privacy-controls" className="panel settings-card">

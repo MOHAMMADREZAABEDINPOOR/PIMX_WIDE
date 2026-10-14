@@ -4,7 +4,7 @@
 
 [English](README.md) · [فارسی](README.fa.md) · [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [PIMX / Profile](https://github.com/MOHAMMADREZAABEDINPOOR)
 
-Encrypt messages, files and folders in your browser. Download the encrypted package, keep it in a local vault or share it through a link with an expiry and download limit. The interface supports Persian and English, light and dark themes, and local tools work offline after the production app is cached.
+Encrypt messages, files and folders in your browser. Download the encrypted package or keep it in a local vault. The interface supports Persian, English, Russian, Chinese, German, French, Japanese and Korean, light and dark themes, and local tools work offline after the production app is cached. Optional server links require a configured D1 database; the current deployment runs without that service.
 
 Encryption and decryption run on your device. Creating a share link uploads the encrypted package; your password stays on your device. Visit analytics are optional and disabled by default.
 

@@ -32,7 +32,7 @@ function Illustration({
   name: string;
   className?: string;
 }) {
-  const { prefs } = usePreferences();
+  const { prefs, l } = usePreferences();
   const ref = useRef<HTMLDivElement>(null);
   const enabled = useSceneActivity(ref);
   return (
@@ -60,7 +60,7 @@ function Illustration({
     >
       <div className="information-art-object">
         <img
-          src={`/illustrations/${name}${prefs.theme === "light" ? "-light" : ""}.svg`}
+          src={`/illustrations/${name}${prefs.theme === "light" ? "-light" : ""}${prefs.lang === "en" ? "" : `-${prefs.lang}`}.svg`}
           alt=""
           width="960"
           height="660"
@@ -68,7 +68,8 @@ function Illustration({
         <i className="art-scan" />
       </div>
       <span className="art-registration">
-        PIMX / PRIVATE SYSTEMS <b>+</b>
+        {" "}
+        {l("PIMX / سامانه‌های خصوصی", "PIMX / PRIVATE SYSTEMS")} <b>+</b>
       </span>
     </div>
   );
@@ -80,17 +81,20 @@ function PrivacyPage() {
   const content = informationContent("privacy", l);
   const icons = [Cpu, Database, Link2, ChartNoAxesColumn, ShieldCheck];
   const labels = [
-    "ON YOUR DEVICE",
-    "Encrypted STORAGE",
-    "OPTIONAL TRANSFER",
-    "YOUR CHOICE",
-    "KNOW THE LIMITS",
+    l("روی دستگاه شما", "ON YOUR DEVICE"),
+    l("ذخیره‌سازی رمزشده", "Encrypted STORAGE"),
+    l("ارسال اختیاری", "OPTIONAL TRANSFER"),
+    l("انتخاب شما", "YOUR CHOICE"),
+    l("محدودیت‌ها را بشناسید", "KNOW THE LIMITS"),
   ];
   return (
     <div className="workspace wrap privacy-atlas">
       <header className="privacy-intro">
         <div>
-          <span className="eyebrow">THE DATA ATLAS / 01</span>
+          <span className="eyebrow">
+            {" "}
+            {l("اطلس داده‌ها / ۰۱", "THE DATA ATLAS / 01")}{" "}
+          </span>
           <h1>
             {l("داده‌های تو،", "Your data.")}
             <br />
@@ -119,7 +123,7 @@ function PrivacyPage() {
             "Local processing does not send your plaintext or package password to the server.",
           )}
         </span>
-        <small>LOCAL FIRST</small>
+        <small> {l("اولویت با پردازش محلی", "LOCAL FIRST")} </small>
       </div>
       <section
         className="privacy-map"
@@ -127,7 +131,10 @@ function PrivacyPage() {
         aria-label={l("مسیر داده‌ها", "Data paths")}
       >
         <div className="map-heading">
-          <span className="eyebrow">TRACE YOUR INFORMATION</span>
+          <span className="eyebrow">
+            {" "}
+            {l("مسیر اطلاعات خود را دنبال کنید", "TRACE YOUR INFORMATION")}{" "}
+          </span>
           <h2>{l("هر مسیر را باز کن.", "Explore each path.")}</h2>
         </div>
         <div
@@ -181,7 +188,10 @@ function PrivacyPage() {
       </section>
       <div className="privacy-records">
         <div className="records-title">
-          <span className="eyebrow">THE COMPLETE RECORD</span>
+          <span className="eyebrow">
+            {" "}
+            {l("تمام جزئیات", "THE COMPLETE RECORD")}{" "}
+          </span>
           <h2>{l("تمام جزئیات، یک‌جا.", "The full picture.")}</h2>
           <p>
             {l(
@@ -214,7 +224,7 @@ function AboutPage() {
   const modules = [
     {
       icon: Cpu,
-      code: "01 / CIPHER ENGINE",
+      code: l("۰۱ / موتور رمزنگاری", "01 / CIPHER ENGINE"),
       title: l("موتور رمزنگاری", "Cipher engine"),
       text: l(
         "متن و فایل، با Web Crypto روی همین دستگاه به بسته رمز‌شده تبدیل می‌شوند.",
@@ -224,7 +234,7 @@ function AboutPage() {
     },
     {
       icon: Database,
-      code: "02 / PRIVATE VAULT",
+      code: l("۰۲ / گاوصندوق خصوصی", "02 / PRIVATE VAULT"),
       title: l("گاوصندوق شخصی", "Personal vault"),
       text: l(
         "عنوان، برچسب و بسته‌ها زیر رمز اصلی، در حافظه مرورگر ذخیره می‌شوند.",
@@ -234,7 +244,7 @@ function AboutPage() {
     },
     {
       icon: KeyRound,
-      code: "03 / PASSWORD LAB",
+      code: l("۰۳ / کارگاه رمزها", "03 / PASSWORD LAB"),
       title: l("کارگاه رمزها", "Password lab"),
       text: l(
         "رمز و عبارت عبور بساز؛ نگهداری و انتخاب آن‌ها در اختیار خودت است.",
@@ -244,7 +254,7 @@ function AboutPage() {
     },
     {
       icon: Link2,
-      code: "04 / Encrypted RELAY",
+      code: l("۰۴ / ارسال رمزشده", "04 / Encrypted RELAY"),
       title: l("اشتراک بسته‌ها", "Package sharing"),
       text: l(
         "در استودیو، برای بسته رمز‌شده لینک با زمان اعتبار و محدودیت دریافت بساز.",
@@ -257,8 +267,14 @@ function AboutPage() {
   return (
     <div className="workspace wrap pimx-workshop">
       <header className="workshop-heading">
-        <span className="eyebrow">INSIDE PIMX / THE WORKSHOP</span>
-        <span className="workshop-version">WEB CRYPTO / FORMAT V2</span>
+        <span className="eyebrow">
+          {" "}
+          {l("درون PIMX / کارگاه", "INSIDE PIMX / THE WORKSHOP")}{" "}
+        </span>
+        <span className="workshop-version">
+          {" "}
+          {l("Web Crypto / قالب نسخه ۲", "WEB CRYPTO / FORMAT V2")}{" "}
+        </span>
       </header>
       <section className="workshop-stage">
         <div className="workshop-copy">
@@ -271,9 +287,9 @@ function AboutPage() {
           <div className="workshop-signature">
             <Fingerprint size={28} />
             <span>
-              YOUR KEY.
-              <br />
-              YOUR CONTROL.
+              {" "}
+              {l("کلید شما.", "YOUR KEY.")} <br />{" "}
+              {l("اختیار شما.", "YOUR CONTROL.")}{" "}
             </span>
           </div>
         </div>
@@ -282,8 +298,8 @@ function AboutPage() {
           {[
             "AES–256–GCM",
             "PBKDF2 / SHA–256",
-            "600,000 ROUNDS",
-            "16B SALT / 12B IV",
+            l("۶۰۰٬۰۰۰ دور", "600,000 ROUNDS"),
+            l("salt با ۱۶ بایت / IV با ۱۲ بایت", "16B SALT / 12B IV"),
           ].map((s) => (
             <span key={s}>{s}</span>
           ))}
@@ -294,7 +310,13 @@ function AboutPage() {
         aria-label={l("اجزای پروژه", "Project modules")}
       >
         <div className="bench-heading">
-          <span className="eyebrow">FOUR TOOLS / ONE PRIVATE SPACE</span>
+          <span className="eyebrow">
+            {" "}
+            {l(
+              "چهار ابزار / یک فضای خصوصی",
+              "FOUR TOOLS / ONE PRIVATE SPACE",
+            )}{" "}
+          </span>
           <h2>{l("قطعه‌ها را بشناس.", "Meet the parts.")}</h2>
         </div>
         <div className="bench-layout">
@@ -346,7 +368,10 @@ function AboutPage() {
         {content.slice(1).map(([title, text], i) => (
           <Reveal key={title}>
             <article>
-              <span className="eyebrow">BUILD NOTE / 0{i + 1}</span>
+              <span className="eyebrow">
+                {" "}
+                {l("نکته فنی / ۰", "BUILD NOTE / 0")} {i + 1}
+              </span>
               <h2>{title}</h2>
               <p>{text}</p>
             </article>
@@ -396,7 +421,13 @@ function TermsPage() {
     <div className="workspace wrap terms-reader">
       <header className="terms-cover">
         <div>
-          <span className="eyebrow">THE USER AGREEMENT / PIMX WIDE</span>
+          <span className="eyebrow">
+            {" "}
+            {l(
+              "توافق‌نامه کاربر / PIMX WIDE",
+              "THE USER AGREEMENT / PIMX WIDE",
+            )}{" "}
+          </span>
           <h1>
             {l("با آگاهی،", "Understand first.")}
             <br />
@@ -417,7 +448,10 @@ function TermsPage() {
       </header>
       <div className="terms-layout">
         <aside className="terms-index">
-          <span className="eyebrow">CONTENTS / 04 CHAPTERS</span>
+          <span className="eyebrow">
+            {" "}
+            {l("فهرست / ۰۴ بخش", "CONTENTS / 04 CHAPTERS")}{" "}
+          </span>
           <nav aria-label={l("فهرست شرایط استفاده", "Terms contents")}>
             {content.map(([title], i) => (
               <a
@@ -475,7 +509,10 @@ function TermsPage() {
               className="terms-clause"
             >
               <div className="clause-meta">
-                <span>CLAUSE / 0{i + 1}</span>
+                <span>
+                  {" "}
+                  {l("بند / ۰", "CLAUSE / 0")} {i + 1}
+                </span>
                 <span>PIMX WIDE</span>
               </div>
               <h2>

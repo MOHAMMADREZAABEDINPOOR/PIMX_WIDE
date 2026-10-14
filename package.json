@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/build-offline.mjs",
+    "build": "tsc --noEmit && vite build && node scripts/build-localizations.mjs && node scripts/build-offline.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
-    "dev:full": "npm run build && wrangler pages dev dist --port 8788",
-    "db:local": "wrangler d1 migrations apply PIMX_DB --local",
+    "dev:full": "npm run build && wrangler pages dev dist --config wrangler.local.toml --port 8788",
+    "db:local": "wrangler d1 migrations apply PIMX_DB --config wrangler.local.toml --local",
     "admin:secret": "node scripts/admin-secret.mjs"
   },
   "dependencies": {

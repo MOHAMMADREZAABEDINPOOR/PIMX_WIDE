@@ -97,6 +97,7 @@ export function VaultVisual({
   compact?: boolean;
   locked?: boolean;
 }) {
+  const { l } = usePreferences();
   const ref = useRef<HTMLDivElement>(null);
   const enabled = useSceneActivity(ref);
   return (
@@ -130,7 +131,8 @@ export function VaultVisual({
         <div className="vault-side" />
         <div className="vault-face">
           <div className="vault-stamp">
-            PIMX <span>PRIVATE BY DESIGN</span>
+            PIMX{" "}
+            <span> {l("طراحی‌شده برای حریم خصوصی", "PRIVATE BY DESIGN")} </span>
           </div>
           <div className="bolt b1" />
           <div className="bolt b2" />
@@ -147,15 +149,18 @@ export function VaultVisual({
             </div>
           </div>
           <div className="vault-status">
-            <i /> AES–256 · LOCAL ENGINE
+            <i /> {l("AES–256 · موتور محلی", "AES–256 · LOCAL ENGINE")}{" "}
           </div>
         </div>
       </div>
       <div className="scene-label label-one">
-        <ShieldCheck size={15} /> Encrypted AT SOURCE
+        <ShieldCheck size={15} />{" "}
+        {l("رمزنگاری در مبدأ", "Encrypted AT SOURCE")}{" "}
       </div>
       <div className="scene-label label-two">
-        01 / YOUR EYES ONLY <ArrowUpRight size={14} />
+        {" "}
+        {l("۰۱ / فقط برای شما", "01 / YOUR EYES ONLY")}{" "}
+        <ArrowUpRight size={14} />
       </div>
       <div className="scene-cross cross-one">+</div>
       <div className="scene-cross cross-two">+</div>

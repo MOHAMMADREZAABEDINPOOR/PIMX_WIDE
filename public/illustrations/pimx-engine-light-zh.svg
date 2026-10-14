@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" fill="none">
+<defs><linearGradient id="gold" x1="202" y1="130" x2="701" y2="765" gradientUnits="userSpaceOnUse"><stop stop-color="#d9b470"/><stop offset=".45" stop-color="#ad863f"/><stop offset="1" stop-color="#9b752e"/></linearGradient><linearGradient id="metal" x1="280" y1="276" x2="635" y2="623" gradientUnits="userSpaceOnUse"><stop stop-color="#fdfbf7"/><stop offset=".35" stop-color="#eee8dd"/><stop offset="1" stop-color="#d7cfbf"/></linearGradient><radialGradient id="aura"><stop stop-color="#9a7530" stop-opacity=".17"/><stop offset="1" stop-color="#9a7530" stop-opacity="0"/></radialGradient><filter id="blur"><feGaussianBlur stdDeviation="12"/></filter></defs>
+<circle cx="450" cy="450" r="410" fill="url(#aura)"/>
+<g stroke="#9a7530"><circle cx="450" cy="450" r="356" stroke-opacity=".12"/><circle cx="450" cy="450" r="319" stroke-opacity=".19" stroke-dasharray="3 12"/><circle cx="450" cy="450" r="277" stroke-opacity=".25"/><circle cx="450" cy="450" r="237" stroke-opacity=".18"/></g>
+<path d="M450 67V177M450 723V833M67 450H177M723 450H833M183 183L258 258M642 642L717 717M183 717L258 642M642 258L717 183" stroke="#9a7530" stroke-opacity=".24"/>
+<g stroke="url(#gold)" opacity=".65"><path d="M299 181L311 206M224 240L243 257M181 314L207 326M166 407L195 410M177 504L206 498M217 592L242 577M283 664L301 640M369 708L378 679M466 719V690M560 697L551 670M642 647L622 627M695 569L669 556M719 478L690 476M713 381L685 386M676 291L653 306M610 221L593 244M527 180L519 209"/></g>
+<path d="M311 286L447 208L591 291V454L450 536L311 456Z" fill="#000" opacity=".08" filter="url(#blur)" transform="translate(10 102)"/>
+<path d="M290 295L449 204L614 300L452 393Z" fill="#faf5ec" stroke="url(#gold)" stroke-width="1.5"/>
+<path d="M290 295V497L452 591V393Z" fill="url(#metal)" stroke="url(#gold)" stroke-width="1.5"/>
+<path d="M452 393L614 300V501L452 591Z" fill="#e4ddd0" stroke="url(#gold)" stroke-width="1.5"/>
+<path d="M307 311V486L437 562V386Z" stroke="#9a7530" stroke-opacity=".24"/><path d="M468 402L598 327V489L468 564Z" stroke="#9a7530" stroke-opacity=".23"/>
+<path d="M323 295L450 222L583 300L453 373Z" stroke="#9a7530" stroke-opacity=".27"/>
+<path d="M336 356V460L368 478V376Z" fill="#9a7530" fill-opacity=".08" stroke="#9a7530" stroke-opacity=".25"/>
+<path d="M342 370L368 385C384 394 401 409 401 434C401 458 385 460 368 450L354 442V486M355 389L370 398C380 404 386 413 386 426C386 438 380 439 370 433L355 424" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M502 418V490M520 407V479M538 397V469M556 386V458" stroke="#9a7530" stroke-opacity=".4" stroke-width="3"/>
+<path d="M496 509L565 469M498 523L566 483" stroke="#9a7530" stroke-opacity=".24"/>
+<path d="M393 287L447 256L507 289L451 322Z" fill="#9a7530" fill-opacity=".08" stroke="url(#gold)"/>
+<g fill="#9a7530"><circle cx="450" cy="94" r="4"/><circle cx="727" cy="450" r="3"/><circle cx="229" cy="669" r="3"/><circle cx="664" cy="210" r="3"/><circle cx="136" cy="475" r="2"/></g>
+<g stroke="#9a7530" stroke-opacity=".4"><path d="M320 118L342 142H376M768 335L730 366H692M182 606L228 580H266M545 779L545 718H575"/></g>
+<g font-family="Arial,sans-serif" fill="#9a7530" font-size="9" letter-spacing="2"><text x="309" y="101">PIMX / 私人系统</text><text x="746" y="327">AES 256</text><text x="112" y="626">本地第一</text><text x="503" y="807">V.02 / 密码引擎</text></g>
+</svg>

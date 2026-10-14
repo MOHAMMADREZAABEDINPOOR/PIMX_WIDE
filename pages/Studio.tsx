@@ -154,8 +154,9 @@ export function Studio({
     if (next.length > 100 || next.reduce((a, f) => a + f.size, 0) > limit) {
       setError(
         l(
-          "حداکثر ۱۰۰ فایل و " + formatBytes(limit) + " در هر بسته.",
-          `Up to 100 files and ${formatBytes(limit)} per package.`,
+          "حداکثر ۱۰۰ فایل و {limit} در هر بسته.",
+          "Up to 100 files and {limit} per package.",
+          { limit: formatBytes(limit) },
         ),
       );
       return;
@@ -911,6 +912,22 @@ function ShareModal({
     [busy, setBusy] = useState(false),
     [error, setError] = useState("");
   const alive = useRef(true);
+  const [sharing, setSharing] = useState<boolean | null>(null);
+  useEffect(() => {
+    let active = true;
+    fetch("/api/health")
+      .then((response) => response.json())
+      .then((data) => {
+        if (active)
+          setSharing((data as { sharing?: boolean }).sharing === true);
+      })
+      .catch(() => {
+        if (active) setSharing(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
   useEffect(() => {
     alive.current = true;
     return () => {
@@ -1054,7 +1071,7 @@ function ShareModal({
           </div>
           <button
             className="btn primary full"
-            disabled={busy || payload.length > 500000}
+            disabled={busy || sharing !== true || payload.length > 500000}
             onClick={create}
           >
             <Link2 size={16} />
@@ -1065,6 +1082,14 @@ function ShareModal({
                   "Upload encrypted package & create link",
                 )}
           </button>
+          {sharing === false && (
+            <p className="info-note" role="status">
+              {l(
+                "سرویس لینک فعلاً فعال نیست. بسته رمز‌شده را دانلود کنید و از مسیر دیگری بفرستید؛ رمز عبور را جدا ارسال کنید.",
+                "Link sharing is currently disabled. Download the encrypted package and send it through another channel; send the password separately.",
+              )}
+            </p>
+          )}
           {payload.length > 500000 && (
             <p className="info-note">
               {l(
