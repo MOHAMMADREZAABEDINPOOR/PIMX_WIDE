@@ -1,5 +1,7 @@
 # PIMX WIDE
 
+[???????](https://pimxwide.pages.dev/)
+
 [فارسی](README.fa.md) · [English](README.md) · [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [پروفایل PIMX](https://github.com/MOHAMMADREZAABEDINPOOR)
 
 متن، فایل و پوشه را در مرورگر رمز کنید. بسته رمز‌شده را دانلود کنید، در گاوصندوق محلی نگه دارید یا با لینکی که زمان اعتبار و تعداد دریافت مشخص دارد بفرستید. برنامه فارسی و انگلیسی، تم روشن و تیره و استفاده آفلاین از ابزارهای محلی پس از ذخیره‌شدن نسخه انتشار در مرورگر را پشتیبانی می‌کند.

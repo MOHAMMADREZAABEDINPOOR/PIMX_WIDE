@@ -1,5 +1,7 @@
 # PIMX WIDE
 
+[Live website](https://pimxwide.pages.dev/)
+
 [English](README.md) · [فارسی](README.fa.md) · [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [PIMX / Profile](https://github.com/MOHAMMADREZAABEDINPOOR)
 
 Encrypt messages, files and folders in your browser. Download the encrypted package, keep it in a local vault or share it through a link with an expiry and download limit. The interface supports Persian and English, light and dark themes, and local tools work offline after the production app is cached.
