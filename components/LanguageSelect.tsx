@@ -5,6 +5,16 @@ import { Select } from "./Select";
 
 export function LanguageSelect({ compact = false }: { compact?: boolean }) {
   const { prefs, update, l } = usePreferences();
+  const flags: Record<Language, string> = {
+    fa: "ir",
+    en: "us",
+    ru: "ru",
+    zh: "cn",
+    de: "de",
+    fr: "fr",
+    ja: "jp",
+    ko: "kr",
+  };
   return (
     <Select
       compact={compact}
@@ -16,7 +26,16 @@ export function LanguageSelect({ compact = false }: { compact?: boolean }) {
         label: language.native,
         description:
           language.native === language.english ? undefined : language.english,
-        icon: <span aria-hidden="true">{language.flag}</span>,
+        icon: (
+          <img
+            className="language-flag"
+            src={`/flags/${flags[language.code]}.svg`}
+            width="20"
+            height="15"
+            alt=""
+            aria-hidden="true"
+          />
+        ),
       }))}
     />
   );

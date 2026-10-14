@@ -207,8 +207,8 @@ export function Select({
             >
               {o.icon && <span className="select-option-icon">{o.icon}</span>}
               <span>
-                {o.label}
-                {o.description && <small>{o.description}</small>}
+                <bdi dir="auto">{o.label}</bdi>
+                {o.description && <small dir="auto">{o.description}</small>}
               </span>
               {String(o.value) === String(value) && <Check size={15} />}
             </div>
@@ -238,7 +238,9 @@ export function Select({
         {selected?.icon && (
           <span className="select-value-icon">{selected.icon}</span>
         )}
-        <span>{selected?.label}</span>
+        <span>
+          <bdi dir="auto">{selected?.label}</bdi>
+        </span>
         <ChevronDown size={17} />
       </button>
       {createPortal(dropdown, host)}
