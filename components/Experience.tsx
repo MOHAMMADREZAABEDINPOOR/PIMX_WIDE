@@ -101,6 +101,7 @@ export function Experience() {
     [commands, setCommands] = useState(false),
     [query, setQuery] = useState(""),
     [hidden, setHidden] = useState(false),
+    [exiting, setExiting] = useState(false),
     [epoch, setEpoch] = useState(0),
     [online, setOnline] = useState(navigator.onLine),
     [install, setInstall] = useState<any>(null),
@@ -129,7 +130,10 @@ export function Experience() {
     setHidden(true);
   }, []);
   const quickExit = useCallback(() => {
-    flushSync(lock);
+    flushSync(() => {
+      setExiting(true);
+      lock();
+    });
     window.location.replace("https://www.google.com/");
   }, [lock]);
   useEffect(() => {
@@ -234,6 +238,7 @@ export function Experience() {
     await install.prompt();
     setInstall(null);
   }
+  if (exiting) return null;
   return (
     <div className="app-shell">
       <header className="header">

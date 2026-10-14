@@ -63,7 +63,7 @@ test("quick lock clears session and terminates the worker before replacing the c
   }));
   expect(result.exit).toEqual({
     locked: true,
-    covered: true,
+    covered: false,
     cleared: true,
     outputRemoved: true,
   });
@@ -82,6 +82,38 @@ test("the quick lock keyboard shortcut opens Google", async ({ page }) => {
   await expect(page.locator("#startup-loader")).toHaveCount(0);
   await page.keyboard.press("Control+Shift+l");
   await expect(page).toHaveURL("https://www.google.com/");
+});
+
+test("slow Google navigation never displays the lock screen or private content", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem(
+        "test:slow-exit",
+        JSON.stringify({
+          locked: !!document.querySelector(".privacy-overlay"),
+          content: document.getElementById("root")?.innerHTML,
+        }),
+      );
+    });
+  });
+  await page.route("https://www.google.com/**", async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 3100));
+    await route.fulfill({
+      contentType: "text/html",
+      body: "<title>Google fixture</title>",
+    });
+  });
+  await page.goto("/");
+  await expect(page.locator("#startup-loader")).toHaveCount(0);
+  await page.locator(".privacy-button").click();
+  await expect(page).toHaveURL("https://www.google.com/");
+  await page.goto("/");
+  const outgoing = await page.evaluate(() =>
+    JSON.parse(localStorage.getItem("test:slow-exit") || "{}"),
+  );
+  expect(outgoing).toEqual({ locked: false, content: "" });
 });
 
 test("automatic idle locking covers the app without navigating away", async ({
