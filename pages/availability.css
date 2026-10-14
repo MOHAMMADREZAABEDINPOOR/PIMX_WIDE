@@ -1,0 +1,303 @@
+.availability-page {
+  padding-top: 54px;
+}
+.availability-intro {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-bottom: 48px;
+}
+.availability-context {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.availability-intro h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.4;
+}
+.availability-intro p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-block: 18px 28px;
+  max-width: 51ch;
+  line-height: 2;
+}
+.availability-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 16px;
+}
+.availability-device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 325px;
+  padding: 30px 20px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: 0 12px 50px var(--soft);
+}
+.availability-device strong {
+  color: var(--text);
+  font-size: 20px;
+  margin-top: 16px;
+}
+.availability-device > span {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  text-align: center;
+}
+.availability-device > i {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-style: normal;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: var(--soft);
+  font-size: 11px;
+  margin-top: 20px;
+}
+.availability-wire {
+  height: 68px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+}
+.availability-wire i {
+  position: absolute;
+  inset: 0 auto;
+  width: 1px;
+  border-inline-start: 1px dashed var(--accent);
+  opacity: 0.5;
+}
+.availability-wire span {
+  z-index: 1;
+  background: var(--bg);
+  padding: 5px 12px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.availability-cloud {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.availability-connection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  background: var(--surface);
+}
+.connection-browser {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+.connection-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--soft);
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.connection-icon.online {
+  color: var(--green);
+}
+.connection-browser h2 {
+  font-size: 17px;
+}
+.connection-browser p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 5px;
+  max-width: 56ch;
+}
+.connection-server {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.connection-server button {
+  white-space: normal;
+}
+.availability-tools {
+  padding-block: 48px;
+}
+.availability-heading h2 {
+  font-size: 25px;
+}
+.availability-heading p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.availability-tool-list {
+  margin-top: 26px;
+  border-block: 1px solid var(--line);
+}
+.availability-tool {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.availability-tool:last-child {
+  border-bottom: 0;
+}
+.availability-tool:hover {
+  background: var(--soft);
+}
+.availability-tool > svg {
+  color: var(--accent);
+}
+.availability-tool > div {
+  flex: 1;
+}
+.availability-tool h3 {
+  font-size: 17px;
+}
+.availability-tool p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.tool-connectivity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.tool-connectivity.local {
+  color: var(--green);
+}
+.availability-help {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding-block: 14px 30px;
+}
+.availability-help > div {
+  min-width: 0;
+}
+.availability-help > div > svg {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.availability-help h2 {
+  font-size: 22px;
+}
+.availability-help p,
+.availability-help li {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 2;
+}
+.availability-help p {
+  margin-top: 16px;
+}
+.availability-help ol {
+  margin: 16px 0;
+  padding-inline-start: 22px;
+}
+.availability-help li {
+  padding-inline-start: 8px;
+  padding-block: 4px;
+}
+.availability-policy {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  font-size: 12px !important;
+}
+.availability-checking {
+  animation: availability-spin 1s linear infinite;
+}
+@keyframes availability-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 760px) {
+  .availability-page {
+    padding-top: 32px;
+  }
+  .availability-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 30px;
+  }
+  .availability-intro h1 {
+    font-size: 34px;
+  }
+  .availability-intro p {
+    font-size: 14px;
+  }
+  .availability-connection {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 24px;
+  }
+  .connection-server {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    align-items: stretch;
+  }
+  .availability-tool {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-inline: 0;
+  }
+  .availability-tool > div {
+    flex-basis: calc(100% - 40px);
+  }
+  .tool-connectivity {
+    margin-inline-start: 37px;
+    flex: 1;
+  }
+  .availability-help {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .availability-heading h2 {
+    font-size: 23px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .availability-checking {
+    animation: none;
+  }
+}
+html[data-motion="false"] .availability-checking {
+  animation: none;
+}

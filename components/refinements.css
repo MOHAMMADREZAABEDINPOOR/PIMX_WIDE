@@ -1,0 +1,287 @@
+/* Light objects use porcelain, brushed brass and soft daylight shadows. */
+html[data-theme="light"] .vault-face {
+  background: linear-gradient(
+    140deg,
+    #fffdf7 0%,
+    #ece7da 35%,
+    #f9f6ee 80%,
+    #d9d0ba
+  );
+  border-color: #b4a27d;
+  box-shadow:
+    inset 0 0 0 6px #eee9dc,
+    inset 0 0 0 7px #c9b990,
+    inset 0 0 0 9px #fffcf3,
+    4px 12px 25px #79683c20;
+}
+html[data-theme="light"] .vault-side {
+  background: linear-gradient(90deg, #e5ddca, #cfc3a6);
+  box-shadow:
+    40px 0 0 -1px #e2d9c5,
+    45px 0 0 -2px #bcb097;
+}
+html[data-theme="light"] .vault-side:after {
+  background: linear-gradient(90deg, #ddd3be, #b7a783);
+  border-color: #b4a27d;
+}
+html[data-theme="light"] .vault-door {
+  background: linear-gradient(145deg, #fffdf7, #e9e1ce);
+  border-color: #bda97e;
+  box-shadow:
+    inset 0 0 0 3px #f8f4e9,
+    inset 0 0 0 4px #cbbc9a,
+    0 5px 15px #79683c12;
+}
+html[data-theme="light"] .vault-stamp,
+html[data-theme="light"] .vault-status {
+  color: #8b702d;
+}
+html[data-theme="light"] .vault-stamp span {
+  color: #8d856f;
+}
+html[data-theme="light"] .dial {
+  background: repeating-conic-gradient(#b89b5b 0deg 1deg, #f2ebd8 1deg 9deg);
+  box-shadow:
+    0 5px 15px #79683c25,
+    inset 0 0 0 7px #e5d9bc;
+}
+html[data-theme="light"] .dial-inner {
+  background: linear-gradient(135deg, #fff5d6, #c9ad70);
+  box-shadow: 2px 4px 10px #79683c20;
+}
+html[data-theme="light"] .dial-arm {
+  background: linear-gradient(#efdeac, #b29960);
+  box-shadow: 0 3px 5px #79683c20;
+}
+html[data-theme="light"] .bolt {
+  background: linear-gradient(135deg, #e6d4a6, #aa8b4e);
+  box-shadow: 1px 1px 3px #79683c25;
+}
+html[data-theme="light"] .vault-shadow {
+  background: #88764b;
+  opacity: 0.12;
+  filter: blur(20px);
+}
+html[data-theme="light"] .file-stack > div {
+  background: linear-gradient(135deg, #fffdf6, #e8dfc9);
+  border-color: #cbbc9a;
+  color: #80622d;
+  box-shadow: 0 8px 18px #79683c15;
+}
+html[data-theme="light"] .file-stack > div:nth-child(1) {
+  background: #fcf8ed;
+}
+html[data-theme="light"] .file-stack > div:nth-child(2) {
+  background: #f2ebdc;
+}
+html[data-theme="light"] .file-stack > div:nth-child(3) {
+  background: #e8dfc9;
+}
+.mobile-nav-icon,
+.mobile-menu-scrim {
+  display: none;
+}
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--surface), var(--bg));
+  margin-top: 25px;
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr;
+  gap: 65px;
+  padding-block: 50px 40px;
+}
+.footer-logotype {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0;
+  direction: ltr;
+}
+.footer-logotype > span {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 54px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--accent);
+  background: var(--soft);
+}
+.footer-logotype b {
+  font:
+    700 24px Arial,
+    sans-serif;
+  letter-spacing: 1px;
+}
+.footer-logotype em {
+  color: var(--accent);
+  font-weight: 400;
+  font-style: normal;
+}
+.footer-identity > p {
+  max-width: 300px;
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+  margin-block: 22px;
+}
+.footer-local {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--accent);
+  font-size: 11px;
+}
+.footer-column {
+  min-width: 0;
+}
+.footer-column h2 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.footer-column > a,
+.footer-column > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  width: 100%;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: start;
+}
+.footer-column > a:hover,
+.footer-column > button:hover {
+  color: var(--accent);
+}
+.footer-column svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding-block: 22px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.footer-bottom a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.footer-bottom > span[dir] {
+  font:
+    10px Arial,
+    sans-serif;
+  letter-spacing: 1px;
+}
+@media (max-width: 850px) {
+  .footer-main {
+    gap: 30px;
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .main-nav {
+    display: flex;
+    top: 70px;
+    padding: 12px 18px;
+    gap: 4px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 16px 40px #0002;
+    opacity: 0;
+    transform: translateY(-14px);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.35s var(--ease-out),
+      visibility 0s 0.35s;
+  }
+  .main-nav.open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      opacity 0.25s ease,
+      transform 0.35s var(--ease-out),
+      visibility 0s;
+  }
+  .main-nav button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px;
+    min-height: 47px;
+    padding: 13px 14px;
+  }
+  .main-nav button.active {
+    background: var(--soft);
+    color: var(--accent);
+  }
+  .main-nav .active:after {
+    display: none;
+  }
+  .mobile-nav-icon {
+    display: block;
+  }
+  .mobile-menu-scrim {
+    display: block;
+    position: fixed;
+    inset: 70px 0 0;
+    z-index: 39;
+    background: #0003;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.3s,
+      visibility 0s 0.3s;
+  }
+  .mobile-menu-scrim.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      opacity 0.3s,
+      visibility 0s;
+  }
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 25px;
+    padding-block: 35px;
+  }
+  .footer-identity {
+    grid-column: 1 / -1;
+  }
+  .footer-identity > p {
+    max-width: 360px;
+    margin-block: 17px;
+  }
+  .footer-column h2 {
+    font-size: 13px;
+  }
+  .footer-column > a,
+  .footer-column > button {
+    font-size: 11px;
+    min-height: 44px;
+    gap: 5px;
+  }
+  .footer-bottom {
+    gap: 16px;
+    font-size: 10px;
+  }
+  .footer-bottom > span:first-child {
+    width: 100%;
+  }
+}

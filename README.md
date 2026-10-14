@@ -1,169 +1,91 @@
-<div align="center">
+# PIMX WIDE
 
-<!-- ============================================================================== -->
-<!-- DYNAMIC ANIMATED CAPSULE HEADER                                                -->
-<!-- ============================================================================== -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1,12,24,30&height=220&section=header&text=PIMX_WIDE&fontSize=42&fontAlignY=35&desc=%E2%9A%A1%20Advanced%20Multilingual%20AES-256-GCM%20Cryptographic%20Suite&descFontSize=16&descAlignY=62" alt="PIMX_WIDE Banner" width="100%" />
+[English](README.md) · [فارسی](README.fa.md) · [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [PIMX / Profile](https://github.com/MOHAMMADREZAABEDINPOOR)
 
-<!-- ============================================================================== -->
-<!-- ANIMATED TYPING SVG TELEMETRY                                                 -->
-<!-- ============================================================================== -->
-<a href="https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=1000&color=00D2FF&center=true&vCenter=true&width=780&lines=Military-Grade+AES-256-GCM+Authenticated+Symmetric+Encryption;Hardware-Accelerated+Browser+Web+Crypto+API+Implementation;PBKDF2+Key+Derivation+with+100%2C000%2B+SHA-256+Iterations;Zero-Knowledge+Client-Side+Architecture+(Keys+Never+Leave+RAM);Universal+File%2C+PDF%2C+Text+%26+Code+Payload+Concealment;23%2B+International+Languages+with+Native+Persian+RTL+Support" alt="Typing SVG" />
-</a>
+Encrypt messages, files and folders in your browser. Download the encrypted package, keep it in a local vault or share it through a link with an expiry and download limit. The interface supports Persian and English, light and dark themes, and local tools work offline after the production app is cached.
 
-<br/>
+Encryption and decryption run on your device. Creating a share link uploads the encrypted package; your password stays on your device. Visit analytics are optional and disabled by default.
 
-<!-- ============================================================================== -->
-<!-- BADGES MATRIX                                                                  -->
-<!-- ============================================================================== -->
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=for-the-badge&logo=gnu)](https://www.gnu.org/licenses/agpl-3.0)
-[![React: 18+](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Web Crypto API](https://img.shields.io/badge/Crypto-Web_Crypto_API-0052CC?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
-[![Languages: 23+](https://img.shields.io/badge/Languages-23+_Locales-28a745?style=for-the-badge)](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE)
-[![Read in Persian](https://img.shields.io/badge/مطالعه_به_فارسی-Persian_README-008080?style=for-the-badge)](#persian-documentation)
+## Features
 
-<p align="center">
-  <b>PIMX_WIDE</b> is an enterprise zero-knowledge cryptographic web suite supporting 23+ global languages. By executing hardware-accelerated AES-256-GCM authenticated encryption and PBKDF2 key derivation directly in the user's browser memory via the native Web Crypto API, PIMX_WIDE ensures that plaintexts and encryption keys never touch a remote server or persistent storage.
-</p>
+- Text, file and folder encryption with AES-256-GCM. Version 2 derives keys using PBKDF2-SHA256 with 600,000 iterations; legacy packages remain readable.
+- A local encrypted vault with titles, tags, favorites and encrypted backups. The vault password is separate from each package’s password.
+- Random passwords and passphrases using browser cryptographic randomness. Passphrases use the EFF Long Wordlist; see [THIRD_PARTY.md](THIRD_PARTY.md).
+- Portable packages, QR codes and optional share links. Link limits stop server delivery; they cannot remove copies already downloaded.
+- Quick lock, automatic locking after inactivity, keyboard navigation and support for reduced motion.
 
-<!-- ============================================================================== -->
-<!-- QUICK NAVIGATION ANCHORS                                                       -->
-<!-- ============================================================================== -->
-[Cryptographic Specs](#-cryptographic-specifications) •
-[Directory Anatomy](#-exhaustive-directory--file-anatomy) •
-[Security Architecture](#-security--zero-knowledge-architecture) •
-[Quick Start](#-quick-start--local-development) •
-[توضیحات فارسی](#persian-documentation) •
-[Roadmap](#-strategic-engineering-roadmap) •
-[License](#-copyleft-license--legal-attribution)
+## Getting started
 
-</div>
-
----
-
-## 🔒 Cryptographic Specifications
-
-| Parameter | Specification | Implementation Standard |
-| :--- | :--- | :--- |
-| **Cipher Algorithm** | AES-GCM | NIST SP 800-38D authenticated encryption with 256-bit symmetric keys. |
-| **Integrity Tag** | 128-bit Tag | Guarantees tamper detection and protection against chosen-ciphertext attacks. |
-| **Key Derivation** | PBKDF2 | RFC 8018 with HMAC-SHA-256 and 100,000+ derivation rounds. |
-| **Initialization Vector** | 96-bit CSPRN | Generated uniquely per operation using `window.crypto.getRandomValues()`. |
-| **Memory Isolation** | In-Memory Only | Cryptographic buffers are zeroed out after encryption cycle. |
-
----
-
-## 📂 Exhaustive Directory & File Anatomy
-
-```
-d:/code/PIMXWIDE/
-│
-├── App.tsx                          # Primary layout coordinator, routing state & cipher workbench switcher
-├── constants.ts                     # Cipher constants, algorithm parameters & PBKDF2 iteration configurations
-├── index.html                       # HTML5 entry point with strict Content Security Policy (CSP) headers
-├── index.tsx                        # React 18 DOM bootstrap & mounting
-├── metadata.json                    # Package metadata & build descriptors
-├── package.json                     # Dependencies (React, TypeScript, Lucide React, Tailwind CSS)
-├── README.md                        # Master comprehensive bilingual documentation
-│
-├── pages/                           # Application Views
-│   ├── Home.tsx                     # Landing page with interactive cryptographic workbench
-│   ├── Encrypt.tsx                  # Dedicated text and multi-file encryption interface
-│   ├── Decrypt.tsx                  # Ciphertext inspector, integrity verifier & payload unpacker
-│   ├── Admin.tsx                    # Protected telemetry console viewing usage statistics
-│   ├── About.tsx                    # Mathematical breakdown of AES-GCM & PBKDF2
-│   ├── SLA.tsx                      # Service Level Agreement & zero-knowledge guarantee
-│   ├── Privacy.tsx                  # Comprehensive privacy policy asserting zero-tracking
-│   └── Terms.tsx                    # Terms of service and open-source usage guidelines
-│
-├── services/                        # Cryptographic & Storage Logic
-│   ├── cipherService.ts             # Web Crypto API engine executing AES-GCM & PBKDF2
-│   ├── storageService.ts            # Local encrypted container storage manager
-│   └── telemetryService.ts          # Anonymized client event counter
-│
-├── contexts/                        # React Context Providers
-│   └── LanguageContext.tsx          # 23-language internationalization context & switcher
-│
-├── data/                            # Static localization resources
-│   └── languages.ts                 # Full localization dictionaries (Persian, English, Russian, etc.)
-│
-└── functions/                       # Cloudflare Pages Serverless Edge API
-    └── api/
-        └── visits.ts                # Anonymous visit counter endpoint
-```
-
----
-
-## 🔬 Security & Zero-Knowledge Architecture
-
-```
-[ User Plaintext / File ] + [ User Passphrase ]
-                        │
-                        ▼
-┌────────────────────────────────────────────────────────┐
-│             Browser RAM (Zero Network Access)          │
-│                                                        │
-│ • window.crypto.getRandomValues(salt, iv)              │
-│ • PBKDF2-HMAC-SHA256 (100,000 rounds)                 │
-│ • AES-256-GCM Hardware-Accelerated Block Cipher       │
-└───────────────────────┬────────────────────────────────┘
-                        │
-                        ▼
-┌────────────────────────────────────────────────────────┐
-│             Authenticated Ciphertext Container         │
-│  [ 16-byte Salt ] + [ 12-byte IV ] + [ Ciphertext ] + [ 16-byte Tag ]
-└───────────────────────┬────────────────────────────────┘
-                        │
-        (Export as Base64 String or .pimx Container)
-```
-
----
-
-## 🚀 Quick Start & Local Development
+Use Node.js 22.12 or later.
 
 ```bash
 git clone https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE.git
 cd PIMX_WIDE
-
-npm install
+npm ci
 npm run dev
 ```
-Open `http://localhost:5173` to test encryption locally.
 
----
+The Vite server provides local encryption, the vault and password generation. To test share links and administrator analytics, run the Cloudflare Pages server:
 
-## Persian Documentation
-### 🇮🇷 مستندات فوق‌العاده مفصل، جامع و فنی به زبان فارسی
+```bash
+npm run db:local
+npm run dev:full
+```
 
-### ۱. مقدمه و چرایی ساخت سامانه رمزنگاری PIMX_WIDE
-پروژه **PIMX_WIDE** یک کارگاه امنیتی و پلتفرم رمزنگاری پیشرفته کلاینت‌ساید بر پایه استاندارد نظامی **AES-256-GCM** است. در عصری که ارتباطات اینترنتی به شدت تحت نظارت، فیلترینگ و استراق سمع قرار دارند، ارسال اطلاعات حساس (مانند رمزهای عبور، کلیدهای خصوصی ارز دیجیتال، و اسناد محرمانه) از طریق پیام‌رسان‌ها خطرات بسیار بزرگی به همراه دارد.
+Open `http://localhost:8788`. See [SETUP.md](SETUP.md) for administrator credentials, database bindings and Cloudflare deployment.
 
-**PIMX_WIDE** تضمین می‌کند که هیچ سروری نمی‌تواند پیام‌های شما را بخواند؛ زیرا تمامی مراحل رمزگذاری درون حافظه موقت (RAM) کامپیوتر یا گوشی شما و به کمک موتور سخت‌افزاری مرورگر انجام شده و خروجی آن به یک متن غیرقابل رمزگشایی با استاندارد نظامی تبدیل می‌شود.
+## Configuration and deployment
 
----
+The backend uses the `PIMX_DB` D1 binding in [wrangler.toml](wrangler.toml). Administrator access requires `ADMIN_PASSWORD_HASH` and `SESSION_SECRET`. Generate them with `npm run admin:secret`, keeping the password out of command arguments. Store the output in an ignored `.dev.vars` file locally, or encrypted secrets in Cloudflare Pages.
 
-### ۲. تشریح ساختار فایل‌های پروژه
-- **`services/cipherService.ts`**: مغز محاسباتی پروژه؛ برقراری ارتباط با توابع سطح پایین مرورگر (**Web Crypto API**)، تولید بردار اولیه تصادفی (IV) و اشتقاق کلید با الگوریتم PBKDF2.
-- **`pages/Encrypt.tsx` و `pages/Decrypt.tsx`**: رابط‌های گرافیکی مدرن برای رمزگذاری و رمزگشایی متن و فایل‌ها به همراه محاسبه‌گر آنتروپی رمزعبور.
-- **`data/languages.ts`**: ترجمه کامل برنامه به بیش از ۲۳ زبان زنده دنیا با پشتیبانی ۱۰۰٪ از خط فارسی و چیدمان راست‌چین.
+Run `npm run build` and deploy `dist` with `functions/` and the configured D1 database. A static frontend alone supports device-local tools; share links and administrator analytics need Pages Functions. Production requires HTTPS.
 
----
+## Commands and checks
 
-## 📜 Copyleft License & Legal Attribution
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Start the frontend development server |
+| `npm run build` | Check TypeScript and build the production app with its offline shell |
+| `npm run preview` | Preview the production frontend |
+| `npm run typecheck` | Check TypeScript |
+| `npm test` | Test encryption, passwords and administrator sessions |
+| `npm run test:e2e` | Run browser tests with a disposable local Pages server and database |
 
-Distributed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+Browser tests require Playwright Chromium: `npx playwright install chromium`.
 
----
+## Project structure
 
-<div align="center">
+| Path | Contents |
+|---|---|
+| [pages/](pages/) | Application pages |
+| [components/](components/) | Shared controls, visualizations and styles |
+| [contexts/](contexts/) | Preferences and vault session state |
+| [services/](services/) | Encryption, downloads and local vault storage |
+| [functions/](functions/) | Cloudflare API routes |
+| [migrations/](migrations/) | D1 database schema |
+| [tests/](tests/) | Unit and browser tests |
+| [public/](public/) | Icons, illustrations and app manifest |
+| [assets/](assets/) | Documentation artwork |
 
-<!-- ============================================================================== -->
-<!-- ANIMATED CAPSULE FOOTER                                                        -->
-<!-- ============================================================================== -->
-<img src="./assets/footer.svg" alt="PIMX_WIDE 3D Footer" width="100%" />
+## Limits and data handling
 
-<sub>Architected with dedication by <a href="https://github.com/MOHAMMADREZAABEDINPOOR"><b>MOHAMMADREZA ABEDINPOOR</b></a>. If PIMX_WIDE safeguards your digital privacy, consider leaving a ⭐!</sub>
+Keep passwords separately from packages and try decrypting a package before deleting the original. There is no password recovery. Clearing browser storage can remove the vault and preferences; keep an encrypted backup elsewhere.
 
-</div>
+Studio packages accept up to 100 files and 48 MB of input on desktop, or 24 MB on mobile. Share links accept encrypted packages up to 500 KB. Quick lock clears application session state and closes the vault, but cannot guarantee browser-memory or clipboard erasure. Downloaded files remain on the device.
+
+This project has not had an independent security audit. Read [SETUP.md](SETUP.md) for protocol details and storage limits.
+
+## Troubleshooting
+
+- Missing dependencies: run `npm ci`.
+- Share links or admin requests fail: check the Pages Functions server, D1 binding and administrator secrets.
+- Offline tools are unavailable: load the production app fully online first. Development mode does not register the service worker.
+- Old assets appear: rebuild and refresh the browser cache.
+
+## Contributing
+
+Create a focused branch, check the affected behavior and explain the change. Keep private data, build outputs and local databases out of commits.
+
+## License
+
+No repository-level license file is included. Contact the repository owner for reuse terms.
