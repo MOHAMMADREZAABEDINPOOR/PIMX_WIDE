@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://pimxwide.pages.dev/"><img src="assets/readme/hero.gif" width="1200" alt="PIMX WIDE: animated project artwork" /></a>
+<a href="https://pimxwide.pages.dev/"><img src="assets/readme/hero.gif" width="1200" alt="PIMX WIDE: original animated 3D illustration" /></a>
 
 [English](README.md) · [فارسی](README.fa.md) · [Live website ↗](https://pimxwide.pages.dev/)
 
@@ -11,10 +11,6 @@
 # PIMX WIDE
 
 پیام، فایل و پوشه را روی دستگاه خودت با AES-256-GCM رمزگذاری کن. بسته‌های رمزگذاری‌شده را در صندوق دارای گذرواژه مرتب کن، رمز یا عبارت عبور بساز و پشتیبان رمزگذاری‌شده نگه دار؛ ابزارهای محلی پس از ذخیرهٔ برنامه آفلاین کار می‌کنند.
-
-<a href="https://pimxwide.pages.dev/"><img src="assets/readme/redesign.gif" width="1200" alt="پیش‌نمایش رابط بازطراحی‌شده: PIMX WIDE" /></a>
-
-[پیش‌نمایش رابط بازطراحی‌شده · PNG](assets/readme/redesign.png) · [Static artwork](assets/readme/hero.png)
 
 ## امکانات
 

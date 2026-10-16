@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://pimxwide.pages.dev/"><img src="assets/readme/hero.gif" width="1200" alt="PIMX WIDE: animated project artwork" /></a>
+<a href="https://pimxwide.pages.dev/"><img src="assets/readme/hero.gif" width="1200" alt="PIMX WIDE: original animated 3D illustration" /></a>
 
 [English](README.md) · [فارسی](README.fa.md) · [Live website ↗](https://pimxwide.pages.dev/)
 
@@ -11,10 +11,6 @@
 # PIMX WIDE
 
 Encrypt messages, files and folders locally with AES-256-GCM. Organize encrypted packages in a password-protected vault, create passwords or passphrases, and keep encrypted backups; local tools work offline after caching.
-
-<a href="https://pimxwide.pages.dev/"><img src="assets/readme/redesign.gif" width="1200" alt="Preview of the redesigned interface: PIMX WIDE" /></a>
-
-[Preview of the redesigned interface · PNG](assets/readme/redesign.png) · [Static artwork](assets/readme/hero.png)
 
 ## What you can do
 
