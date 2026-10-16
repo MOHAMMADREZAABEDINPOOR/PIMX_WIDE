@@ -1,12 +1,28 @@
+<div align="center">
+
+<a href="https://pimxwide.pages.dev/"><img src="assets/readme/hero.gif" width="1200" alt="PIMX WIDE: animated project artwork" /></a>
+
+[English](README.md) · [فارسی](README.fa.md) · [Live website ↗](https://pimxwide.pages.dev/)
+
+[![Live GitHub statistics](https://raw.githubusercontent.com/MOHAMMADREZAABEDINPOOR/MOHAMMADREZAABEDINPOOR/main/assets/readme/live-PIMX_WIDE.svg)](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE)
+
+</div>
+
 # PIMX WIDE
 
-[وب‌سایت](https://pimxwide.pages.dev/)
+پیام، فایل و پوشه را روی دستگاه خودت با AES-256-GCM رمزگذاری کن. بسته‌های رمزگذاری‌شده را در صندوق دارای گذرواژه مرتب کن، رمز یا عبارت عبور بساز و پشتیبان رمزگذاری‌شده نگه دار؛ ابزارهای محلی پس از ذخیرهٔ برنامه آفلاین کار می‌کنند.
 
-[فارسی](README.fa.md) · [English](README.md) · [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [پروفایل PIMX](https://github.com/MOHAMMADREZAABEDINPOOR)
+<a href="https://pimxwide.pages.dev/"><img src="assets/readme/redesign.gif" width="1200" alt="پیش‌نمایش رابط بازطراحی‌شده: PIMX WIDE" /></a>
 
-متن، فایل و پوشه را در مرورگر رمز کنید. بسته رمز‌شده را دانلود کنید یا در گاوصندوق محلی نگه دارید. برنامه از فارسی، انگلیسی، روسی، چینی، آلمانی، فرانسوی، ژاپنی و کره‌ای، تم روشن و تیره و استفاده آفلاین از ابزارهای محلی پشتیبانی می‌کند. سرویس اختیاری لینک به دیتابیس D1 نیاز دارد و در انتشار فعلی فعال نیست.
+[پیش‌نمایش رابط بازطراحی‌شده · PNG](assets/readme/redesign.png) · [Static artwork](assets/readme/hero.png)
 
-رمزنگاری و رمزگشایی روی دستگاه شما انجام می‌شود. با ساخت لینک اشتراک، بسته رمز‌شده به سرور می‌رود و رمز عبور روی دستگاه می‌ماند. آمار بازدید اختیاری است و به‌صورت پیش‌فرض خاموش است.
+## امکانات
+
+- بسته‌های AES-256-GCM برای متن، فایل و پوشه و پشتیبانی از بسته‌های قدیمی
+- صندوق محلی رمزگذاری‌شده با برچسب، علاقه‌مندی، پشتیبان و قفل خودکار
+- رمز و عبارت عبور با تصادفی‌بودن رمزنگاری، هشت زبان و ابزارهای محلی آفلاین
+
+لینک اشتراک اختیاری فقط بستهٔ رمزگذاری‌شده را آپلود می‌کند و به Pages Functions و دیتابیس D1 نیاز دارد. انتشار فعلی اتصال D1 ندارد و لینک سروری در آن فعال نیست. گذرواژه روی دستگاه می‌ماند؛ آمار بازدید اختیاری و پیش‌فرض خاموش است.
 
 ## امکانات
 
@@ -91,3 +107,5 @@ npm run dev:full
 ## مجوز
 
 فایل مجوزی برای کل ریپو وجود ندارد. برای شرایط استفاده مجدد با صاحب ریپو تماس بگیرید.
+
+[GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [PIMX](https://github.com/MOHAMMADREZAABEDINPOOR) · [Portfolio](https://pimx.pages.dev/)

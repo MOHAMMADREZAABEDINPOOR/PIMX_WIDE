@@ -1,14 +1,30 @@
+<div align="center">
+
+<a href="https://pimxwide.pages.dev/"><img src="assets/readme/hero.gif" width="1200" alt="PIMX WIDE: animated project artwork" /></a>
+
+[English](README.md) · [فارسی](README.fa.md) · [Live website ↗](https://pimxwide.pages.dev/)
+
+[![Live GitHub statistics](https://raw.githubusercontent.com/MOHAMMADREZAABEDINPOOR/MOHAMMADREZAABEDINPOOR/main/assets/readme/live-PIMX_WIDE.svg)](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE)
+
+</div>
+
 # PIMX WIDE
 
-[Live website](https://pimxwide.pages.dev/)
+Encrypt messages, files and folders locally with AES-256-GCM. Organize encrypted packages in a password-protected vault, create passwords or passphrases, and keep encrypted backups; local tools work offline after caching.
 
-[English](README.md) · [فارسی](README.fa.md) · [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [PIMX / Profile](https://github.com/MOHAMMADREZAABEDINPOOR)
+<a href="https://pimxwide.pages.dev/"><img src="assets/readme/redesign.gif" width="1200" alt="Preview of the redesigned interface: PIMX WIDE" /></a>
 
-Encrypt messages, files and folders in your browser. Download the encrypted package or keep it in a local vault. The interface supports Persian, English, Russian, Chinese, German, French, Japanese and Korean, light and dark themes, and local tools work offline after the production app is cached. Optional server links require a configured D1 database; the current deployment runs without that service.
+[Preview of the redesigned interface · PNG](assets/readme/redesign.png) · [Static artwork](assets/readme/hero.png)
 
-Encryption and decryption run on your device. Creating a share link uploads the encrypted package; your password stays on your device. Visit analytics are optional and disabled by default.
+## What you can do
 
-## Features
+- AES-256-GCM packages for text, files and folders; legacy package support
+- Encrypted local vault with tags, favorites, backups and automatic locking
+- Cryptographic passwords/passphrases, eight languages and offline local tools
+
+Optional share links upload only the encrypted package and require Pages Functions with a D1 database. The current deployment has no D1 binding, so server links are unavailable. Passwords stay on the device; visit analytics are optional and disabled by default.
+
+## Encryption and vault
 
 - Text, file and folder encryption with AES-256-GCM. Version 2 derives keys using PBKDF2-SHA256 with 600,000 iterations; legacy packages remain readable.
 - A local encrypted vault with titles, tags, favorites and encrypted backups. The vault password is separate from each package’s password.
@@ -91,3 +107,5 @@ Create a focused branch, check the affected behavior and explain the change. Kee
 ## License
 
 No repository-level license file is included. Contact the repository owner for reuse terms.
+
+[GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/PIMX_WIDE) · [PIMX](https://github.com/MOHAMMADREZAABEDINPOOR) · [Portfolio](https://pimx.pages.dev/)
